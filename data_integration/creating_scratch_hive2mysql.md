@@ -47,7 +47,6 @@
 
 5. 点击 **下一步**，选择目标表。
 
-.. image:: media/hive2mysql_sourcetable.png
 
 ## 步骤3：选择目标表<selecttargettable>
 
@@ -65,8 +64,6 @@
 
   5. 点击 **下一步**。
 
-.. image:: media/hive2mysql_targetmysql.png
-
 - 当目标表为Report DB时，具体配置如下：
 
   1. 在目标源类型中，选择REPORTDB。
@@ -77,7 +74,6 @@
 
   4. 点击 **下一步**。
 
-.. image:: media/hive2mysql_targetrreportdb.png
 
 ## 后续步骤<followup>
 

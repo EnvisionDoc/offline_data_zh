@@ -37,6 +37,6 @@ key2=value2
 
 `test_list`为参数，你可以为该参数设置值： `test_list=Array[20170515,20170516,20170517,20170518,20170519,20170520,20170521,20170522,20170523,20170524,20170808,20170905,20170906,20170918]`
 
-.. image:: media/parameter_example_url.png
+.. image:: media/parameter_example_URL.png
 
 <!--end-->
