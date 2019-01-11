@@ -1,40 +1,43 @@
-# Configuring an SFTP data source
 
-This topic instructs how to configure the connection to an SFTP data source.
+# 配置SFTP数据源
 
-## About this task
-To retrieve data from an external SFTP data source, create a data source configuration that specifies information about the SFTP connection.
+本文描述了如何配置与SFTP数据源的连接。
 
-## Procedure
+## 关于此任务<description>
 
-1. In the EnOS Console, click **Data Source** from the left navigation panel.
+要从外部SFTP数据源检索数据，首选需要配置与SFTP数据源的连接信息。
 
-2. In the **Data Source** panel, click **Add Data Source**.
 
-3. In the **Data Source** window, provide the following settings:
+## 步骤<procedure>
 
-   - **Data source name**:  The name of the data source. the name of the data source. The name can be a combination of the following characters:
-     - Chinese characters
-     - a through z
-     - A through Z
-     - 0 through 9
-     - _ (underscore)  
-     The maximum length of the data source name is 50 characters.
-   - **Data source type**: SFTP
-   - **IP address**: The IP adderss of the SFTP server.
-   - **Port**: The port number to use for connection. The default port number is 22.
-   - **Username**: the user name to use to access the FTP server.
-   - **Password**: the password of the user name.
-   - **Data source description**: a description of the data source.
+1. 在EnOS控制面板中选择 **数据源管理**。
 
-4. Click **OK** to save the configuration.
+2. 点击 **新增数据源**。
 
-## Results
+3. 在 **数据源** 窗口，提供以下配置：
 
-After the connection is created, the data source item is shown in the **Data Source** table.
+   - **数据源名称**：数据源的名称。数据源名称的最大长度为50个字符，名称可以是以下字符的组合：
+     - 中文
+     - a - z
+     - A - Z
+     - 0 - 9
+     - _ （下划线）
 
-## What to do next
+   - **数据源类型**：SFTP
+   - **IP地址**：数据库的IP地址。
+   - **端口**：用于连接的端口号。默认端口为22。
+   - **用户名**：用于访问SFTP的用户名。
+   - **密码**：用户名的密码。
+   - **数据源描述**：数据源的描述。
 
-When the connection is successfully established, EnOS retrieves the data from the external data source to the EnOS internal Hive database. You must create the Hive table to store the retrived data. For more information, see [Creating Hive table](https://docs.envisioniot.com/docs/analysis-report/en/latest/data_explorer/creating_hivetable.html) in *Data Analysis and Report*.
+4. 点击 **确认** 保存配置。
 
-You can then configure a data integration workflow to synchronize data from the data source to the target table in EnOS. For more information, see [Data Integration](../data_integration/index).
+## 结果<result>
+
+连接创建后，该数据源项将显示在 **数据源管理** 的列表中。
+
+## 后续操作<followup>
+
+成功建立连接后，EnOS会将数据从外部数据源提取到EnOS内部的Hive数据库。你必须创建Hive表存储已提取到的数据。更多信息，参考[创建Hive表](https://docs.envisioniot.com/docs/data-explorer/zh_CN/latest/creating_hivetable.html)。
+
+接着，你可以配置一个数据集成任务流，将数据从数据源同步到EnOS中的目标表。更多信息，参考[数据集成](../data_integration/index)。

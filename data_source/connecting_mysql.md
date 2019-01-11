@@ -1,44 +1,46 @@
-# Configuring an SQL or MySQL Server data source
 
-This topic instructs how to configure the connection to an SQL or MySQL Server data source.
+# 配置SQL或MySQL Server数据源
 
-
-## About this task
-To retrieve data from an external SQL or MySQL database for analysis, Create a data source configuration that specifies information about the data source and the JDBC connection to the source database.
-
-## Procedure
-
-1. In the EnOS Console, click **Data Source** from the left navigation panel.
-
-2. In the **Data Source** panel, click **Add Data Source**.
-
-3. In the **Data Source** window, provide the following settings:
-
-   - **Data source name**:  the name of the data source. the name of the data source. The name can be a combination of the following characters:
-     - Chinese characters
-     - a through z
-     - A through Z
-     - 0 through 9
-     - _ (underscore)  
-     The maximum length of the data source name is 50 characters.
-   - **Data source type**: MYSQL   
-   - **Host name or IP address**: Enter the host name or IP address where the database is hosted.
-   - **Database name**: the name that uniquely identifies to the database to connect.
-   - **Port**: the port to access the database.  
-   EnOS uses the address, database name, and port to establish the JDBC connection from EnOS to the database.
-   - **Username**: the user name to use to access the database.
-   - **Password**: the password of the user name.
-   - **Data source description**: a description of the data source.
-
-4. Click **OK** to save the configuration.
+本文描述了如何配置与SQL或MySQL Server数据源的连接。
 
 
-## Results
+## 关于任务<description>
 
-After the connection is created, the data source item is shown in the **Data Source** table.
+要从外部SQL或MySQL数据库检索数据并进行分析，首先配置该数据源的信息以及创建与源数据库的JDBC连接。
 
-## What to do next
 
-When the connection is successfully established, EnOS retrieves the data from the external data source to the EnOS internal Hive database. You must create the Hive table to store the retrived data. For more information, see [Creating Hive table](https://docs.envisioniot.com/docs/analysis-report/en/latest/data_explorer/creating_hivetable.html) in *Data Analysis and Report*.
+## 步骤<procedure>
 
-You can then configure a data integration workflow to synchronize data from the data source to the target table in EnOS. For more information, see [Data Integration](../data_integration/index).
+1. 在EnOS控制面板中选择 **数据源管理**。
+
+2. 点击 **新增数据源**。
+
+3. 在 **数据源** 窗口，提供以下配置：
+
+   - **数据源名称**：数据源的名称。数据源名称的最大长度为50个字符，名称可以是以下字符的组合：
+     - 中文
+     - a - z
+     - A - Z
+     - 0 - 9
+     - _ （下划线）
+
+   - **数据源类型**：MYSQL
+   - **主机名或IP地址**：数据库的主机名或者IP地址。
+   - **数据库名称**：数据库的名称。为该数据库的唯一识别码。
+   - **端口**：用于连接的端口号。EnO使用地址，数据库名称和端口来建立从EnOS到数据库的JDBC连接。
+   - **用户名**：用于访问数据库的用户名。
+   - **密码**：用户名的密码。
+   - **数据源描述**：数据源的描述。
+
+4. 点击 **确认** 保存配置。
+
+## 结果<result>
+
+连接创建后，该数据源项将显示在 **数据源管理** 的列表中。
+
+
+## 后续操作<followup>
+
+成功建立连接后，EnOS会将数据从外部数据源提取到EnOS内部的Hive数据库。你必须创建Hive表存储已提取到的数据。更多信息，参考[创建Hive表](https://docs.envisioniot.com/docs/data-explorer/zh_CN/latest/creating_hivetable.html)。
+
+接着，你可以配置一个数据集成任务流，将数据从数据源同步到EnOS中的目标表。更多信息，参考[数据集成](../data_integration/index)。

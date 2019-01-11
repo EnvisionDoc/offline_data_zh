@@ -1,22 +1,25 @@
-# Using EnOS Data IDE to run external Python scripts
+# 使用EnOS™Data IDE运行外部Python脚本
 
-EnOS provides the `external_service.sh` script to help you run your own scripts that are not built in EnOS. The sample code shows how to use the `external_service.sh` script with EnOS Data IDE to run your external Python scripts.
+你可使用`external_service.sh`脚本运行非EnOS内置的脚本。示例代码描述了如何使用EnOS 的`external_service.sh`脚本来运行外部Python脚本。
 
-## Before you begin
+## 开始前准备<beforestart>
 
-1. Clone the sample files from the GitHub repo <https://github.com/EnvisionBigdata/dataide_external_script> to your local file system.
-2. From your file system, open the directory that you cloned.
-3. Replace the scripts and referenced files with your own files.
-4. Compress all files in the directory into a `.zip` file, for example, `external_service.zip`.
+1. 将示例文件从GitHub库 <https://github.com/EnvisionBigdata/dataide_external_script>克隆到本地。
 
+2. 在本地打开您克隆的目录。
 
-## About the task
+3. 用你自己的文件替换脚本和引用的文件。
 
-This task uses an example to instruct how to use the `external_service.sh` script to invoke the master script file [`example-conda.sh`](example-conda.sh).
+4. 将目录中所有的文件压缩为`.zip`文件。例如`external_service.zip`。
 
-The description about the sample code in this repository is as follows:
-- The invoked script file `example-conda.sh` is created from the original script file `example.sh` by adding the following commands to install the Python packages that are needed to run the referenced Python scripts.
-   ```
+## 关于任务<description>
+
+此任务使用示例来描述了如何使用`external_service.sh`脚本调用主脚本文件[`example-conda.sh`](example-conda.sh)。
+
+存储库中的示例代码的说明如下：
+- 调用的脚本文件`example-conda.sh`，是通过在原始脚本文件`example.sh`中通过添加以下代码来生成的。此代码安装了运行引用的Python脚本所需的Python包。
+
+  ```
    source ~/.bash_profile
    envName=codeExample
    if [[ `conda create -y -n $envName python=2.7` ]]; then
@@ -32,77 +35,102 @@ The description about the sample code in this repository is as follows:
    ...
 
    source deactivate
+  ```
+
+- `inputFiles`目录中的文件是示例输入文件，包含非标准数据格式和结构，因此需要重组和转换。
+
+- `example-conda.sh`中调用的Python脚本完成处理数据并将数据上传到S3数据库的任务。
+
+- `outputFiles`目录下的文件为符合EnOS数据的输出的示例文件。
+
+- `config`目录下的文件包含了运行Python脚本所需的配置。
+
+
+## 步骤1：将zip文件上传到EnOS（创建资源）<uploadscript>
+
+你可通过以下过程中将`.zip`文件作为EnOS的资源上传：
+
+1. 在EnOS控制台中选择 **数据开发套件 > 资源管理**。
+
+2. 点击资源目录树上方的 **+** 创建资源。
+
+3. 在 **新建资源** 窗口中，提供有关资源的基本设置。然后单击 **确定**。
+
+    - 名称：输入资源名称。
+    - 描述：提供有关资源的描述性信息。
+    - 选择目录：选择保存资源的目录d。
+
+4. 双击刚刚新建的资源打开资源概述。
+
+5. 单击 **新建版本** 并上传`external_service.zip`文件，其设置如下图所示：
+
+   .. image:: media/resource.png
+
+## 步骤2：创建一个引用本资源的任务流<createworkflow>
+
+1. 在EnOS控制台中选择 **数据开发套件 > 任务开发**。
+
+2. 点击目录树上方的 **+** 创建任务流。
+
+3. 在 **新建任务流** 窗口中，按下列信息设置任务流，然后单击 **确定**。
+
+   - **模式**：新建。
+   - **名称**：external_script_sample
+   - **类型**：手动调度
+   - **选择目录**：要存储任务流的目录。
+
+   .. image:: media/new_workflow.png
+
+4. 双击刚刚新建的任务流。
+
+5. 在配置面板中，将任务节点 **SHELL** 拖曳至配置面板中。
+
+6. 在 **新建任务节点** 窗口中，提供任务的名称和描述。然后点击 **创建**。
+
+   .. image:: media/new_task.png
+
+7. 双击刚刚创建的任务节点，根据下列信息设置任务节点：
+
+   -  **命令**：输入以下命令：
+      ```
+      sh external_service.sh $ {service_url} $ {instance_id} $ {command}
+      ```
+
+      其中，`service_url`和`command`为需要在右侧边缘的**参数配置**中设置的参数。` instance_id`为系统变量，是任务流实例的标识符。
+
+   - 选择在步骤3中上载的资源和资源版本。   
+
+8. 单击配置面板右边缘的 **参数配置**，并提供以下设置：
+
    ```
-- The files in the `inputFiles` directory are example input files, which contain non-standard data formats and structures, and therefore need restructuring and transformation.
+   SERVICE_URL = “http://172.20.101.141:8185/uploadservice”
+   command =“python example-conda.py”
+   ```
 
-- The `example-conda.sh` file calls several Python scripts, which process the data and upload the data into S3 database.
+   .. note:: `command`的值为主脚本文件的名称。
 
-- The files in the `outputFiles` directory are example output files that conform to EnOS data conventions.
+   下图为示例中的任务配置。
 
-- The file in the `config` directory contains configuration that is needed for the Python scripts to run.
+   .. image:: media/task.png
 
-## Step 1. Upload the zip file into EnOS (Create resource)
+ 9. 单击 **返回工作流面板**，然后单击 **发布** 以发布工作流程。
 
-Upload the `.zip` file as a resource of EnOS in the following procedure:
+10. 单击 **预跑** 运行任务流。
 
-1. In the EnOS Console, click **Data IDE > Resource Management** from the left navigation panel and click **Create Resource**.
-2. In the **Create Resource** window, provide the basic settings about the resource.
-   - Name: Enter the name of resource.
-   - Description: Provide a descriptive information about the resource.
-   - Select Directory: Select the directy to save the resource.
-	 Click **OK**.
+##步骤3: 验证结果<verify>
 
-3. Click **New version** and upload the `external_service.zip` file with settings as shown in the following figure:
+预跑任务流后，将生成任务流的实例。然后，你可以在数据运维中跟踪有关实例的详细信息。
 
-   ![New version of resource](media/resource.jpg)
+1. 在EnOS控制台中选择 **数据运维**。
 
-## Step 2. Create a workflow with a task that references the resource.
+2. 单击 **预跑实例**，然后通过任务流的名称找到实例。任务流实例如下图所示：
 
-1. In the EnOS Console, click **Data IDE > Task Designer** from the left navigation panel and click **New Workflow**.
-2. In the **New Workflow** window, provide the following settings about the workflow and click **OK**
-	 - **Mode**: Create.
-	 - **Name**: external_script_1
-	 - **Type**: Manual Scheduling
-	 - Select Dir: the directory where you want to store the workflow.
-   ![New workflow](media/new_workflow.jpg)
+   .. image:: media/instance.png
 
-3. From the **Component** panel, drag the **SHELL** type of task node into the workflow panel.
+3. 单击表中的实例名称，然后从配置面板中双击该任务。
 
-4. In the **New Task Node** window, provide name and description of the task. Click **Create**.
+4. 单击 **调查运行日志** 选项卡查看日志。
 
-   ![New task](media/new_task.jpg)
+   .. image:: media/log.png
 
-5. Double click the task node that you just created and provide the following settings about the task:
-	 - **Command**: enter the following command:
-	 ```
-	 sh external_service.sh ${service_url} ${instance_id} ${command}
-	 ```
-
-    where, *service_url* and *command* are parameters that you'll define in the **Parameter Config** tab. *instance_id* is a system variable that indicates the identifier of the workflow instance.
-
-	 - Select the resource and resource version that you uploaded in Step 2.
-
-6. Click the **Parameter Config** tab from the right edge of the task configuration panel and provide the following settings:
-	```
-	service_url="http://172.20.101.141:8185/uploadservice"    
-	command="python example-conda.py"  
-	```
-  **Note**: You'll need to edit the value of `command` with the name of your master script file.
-
-   The following figure shows the task configuration in this example.
-
-   ![Task configuration](media/task.jpg)
-
-7. Click **Save**. Click **Back to workflow panel** and click **Release** to publish the workflow.
-
-8. Click **Pre-run** to run the workflow.
-
-## Step 3. Verify the results   
-
-After you pre-run the workflow, a workflow instance is generated. You can then trace the details about the instance through the task monitor:
-1. In the EnOS Console, click **Task Monitor** from the left navigation panel.
-2. Click **Manual instance** and locate the instance through the name of the workflow. The workflow instance is shown as in the following figure:
-	 ![Instance list](media/instance.jpg)
-3. Click the name of instance from the table and double-click the task from the panel. You can then view the log by clicking the **Scheduling Log** tab.
-
-    ![Log](media/log.jpg)
+<!--end-->

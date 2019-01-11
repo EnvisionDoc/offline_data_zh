@@ -1,36 +1,62 @@
-# Managing resources
+# 管理资源
 
-After a resource is created, you can manage the different versions of resource by performs tasks such as updating, deleting, and downloading.
-
-To manage a resource, double-click the resource from the resource directory tree to show the resource information panel.
-
-## Updating a resource
-
-When a resource is updated, the tasks that reference the resource are automatically updated.
-
-To update the generic information such as the resource name and description, click **Edit Resource**.
-
-To update a resource version, click **Update** from the **Operations** column. Upload the new resource bundle, modify the version number and description according to your needs.
-
-## Tracing workflows that reference a resource version
-
-To trace the usage of a resource version, you can view the workflows and task nodes that reference the resource by clicking **Reference** from the **Operations** column.
-
-## Deleting a resource version or entire resource
-
-You can delete a resource version or an entire resource when it is no longer needed.
-
-**Note**: The following rules apply when you delete a resource or a resource version:
-
-- To delete a resource version, ensure that the version of resource is not referenced by any workflow. Otherwise, the current resource version cannot be deleted. To determine which workflow or task node is referencing the resource version, click **Reference** from the **Operations** column.
-
-- To delete an entire resource, you must first delete all versions under the resource. Otherwise, you cannot delete the entire resource.
-
-To delete a resource version, click **Delete** from the **Operations** column.
-
-To delete an entire resource, right-click the resource from the directory tree and click **Delete** from the menu.
+创建资源后，你可以通过执行更新，删除和下载等任务来管理不同资源版本。
 
 
-## Downloading a resource version
+## 修改资源<edit>
 
-You may want to download a resource file for secondary development. To download a resource file to your local system, click the file name from the **Resource File** column.
+当资源被修改时，引用该资源的任务也会自动更新。
+
+1. 在EnOS控制台中选择 **数据开发套件 > 资源管理**。
+
+2. 在资源目录树中，双击需要更新的资源。
+
+3. 点击 **编辑资源**，更改资源信息或描述。
+
+4. 点击需要修改的资源后的 **更新**。根据需求修改版本号和描述，以及上传新资源包。
+
+
+## 跟踪引用资源的任务流<trace>
+
+1. 在EnOS控制台中选择 **数据开发套件 > 资源管理**。
+
+2. 在资源目录树中，双击需要追踪的资源。
+
+3. 点击资源后的**查看引用**查看被引用该资源的详细任务流。
+
+
+## 删除资源版本或整个资源<delete>
+
+您可以删除某个资源版本或整个资源。
+
+..note:: 删除资源或资源版本时需注意以下原则：
+
+- 删除资源版本前，确保该资源版本未被任何任务流引用，否则，讲无法删除当前资源版本。要确定该资源被哪个任务流或任务节点引用，点击资源后的 **查看引用**。
+
+- 删除整个资源前，必须先删除该资源的所有版本。否则，无法删除整个资源。
+
+
+**删除资源版本**
+
+1. 在EnOS控制台中选择 **数据开发套件 > 资源管理**。
+
+2. 在资源目录树中，双击需要更新的资源。
+
+3. 点击需要删除资源后的 **删除**。
+
+**删除整个资源**
+
+1. 在EnOS控制台中选择 **数据开发套件 > 资源管理**。
+
+2. 右击资源目录树中的资源，然后点击 **删除**。
+
+
+## 下载资源版本<download>
+
+如果你需要对资源文件以二次开发，需将资源文件下载到本地系统。
+
+1. 在EnOS控制台中选择 **数据开发套件 > 资源管理**。
+
+2. 在资源目录树中，双击需要下载的资源。
+
+3. 点击需要下载资源的 **资源内容**。

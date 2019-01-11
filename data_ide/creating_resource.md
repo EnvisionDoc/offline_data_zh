@@ -1,33 +1,42 @@
-# Creating a resource
+# 创建资源
 
-How to crate a resource and add new versions of the resource.
+本章节描述了如何创建资源并设置资源版本。
 
-## Procedure
+## 步骤<procedure>
 
-The procedure to create a resource is as follows:
+创建资源的过程如下：
 
-1. Click **Data IDE > Resource Management** from the left navigation tree and click **Create Resource**.
-2. In the **Create Resource** window, provide the basic settings about the resource.
-   - Name: Enter the name of resource.
-   - Description: Provide a descriptive information about the resource.
-   - Select Directory: Select the directy to save the resource.
-3. Click **OK**.
-4. In the resource details panel, click **New Version** to add a version of resource.
-   - Upload: From your local file system, browse to and select the script file.
-   - Version: Specify the version of resource in the format of
-      ```
-      v<version_number>.<release_number>.<modifier_number>
-      ```
-      For example, v1.0.0.
-   - Description: Provide a descriptive information about the version.
-5. Click **OK**.  
-6. Repeart Step 4 to 5 to add more versions for the resource.
+1. 在EnOS控制台中选择 **数据开发套件 > 资源管理** ，然后点击资源树上方的 **+** 创建资源。
 
-## What to do next
+2. 在 **新建资源** 窗口中，提供和资源相关的基本设置。
 
-You can then invoke the scripts packaged in the resource through a SHELL-type of task in a workflow.
+   - 名称：输入资源名称。
+   - 描述：（可选）提供有关资源的描述性信息。
+   - 选择目录：选择保存资源的目录。
 
-## Reference information
+3. 单击 **确定**。
 
-- [Creating a one-time workflow from scratch](creating_workflow_onetime)
-- [Creating a periodic workflow from scratch](creating_workflow_periodic)
+4. 在 **资源概览** 中，单击 **新建版本** 添加资源版本。
+
+   - 上传资源包：上传本地的脚本文件。
+   - 版本号：更具以下格式指定资源的版本。
+
+     ```
+      v<版本号>.<发行号>.<修改号>
+     ```
+     例如，v1.0.0。
+
+   - 版本描述：提供有关版本的描述性信息。
+
+5. 单击 **确定**。
+
+重复步骤4到5以添加更多的资源版本。
+
+## 后续操作<followup>
+
+接着，你可以通过SHELL类型的任务调用资源中的脚本。
+
+## 相关信息<relatedinformation>
+
+- [从零开始创建一次性任务流](creating_workflow_onetime)
+- [从零开始创建周期性任务流](creating_workflow_periodic)

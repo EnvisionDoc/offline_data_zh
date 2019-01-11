@@ -1,29 +1,39 @@
-# Setting parameters for a workflow or SHELL-type of task
+# 设置任务流或SHELL类型任务的参数
 
-You can use parameters when you configure the workflow or task.
+本文描述了如何设配置在任务流或SHELL类型任务中使用的参数。
 
-## Available options for parameters
-You can specify constants, system variables, or custom variables for a parameter.
 
-For what system variables you can use, see [System variables](system_variables).
+## 参数类型<parameter>
 
-## Procedure
+参数可设置为常量，系统变量或自定义变量。
 
-The procedure is as follows:
+有关可以使用的系统变量，参阅[系统变量](system_variables)。
 
-1. When you are in the workflow to task configuration panel, click **Parameter Settings** from the right edge of the panel.
-2. For each parameter that you used, provide the value in the **key=value** format. When you have multiple parameters to define, separate each parameter with an **Enter**.
-```
-key1=value1
-key2=value2
-```
 
-The value can be a single value, or an array of values.
+## 步骤<procedure>
+
+步骤如下：
+
+1. 在EnOS控制台中选择 **数据开发套件 > 任务开发**。
+
+2. 在目录树中，双击需要添加参数的任务流。
+
+3. 在配置面板中，单击面板右边缘的 **参数设置**。
+
+4. 按 **key=value** 的格式配置你所使用的每个参数的值。如果要定义多个参数，使用 **Enter** 键分隔每个参数。
+
+   ```
+   key1=value1
+   key2=value2
+   ```
+
+值可以为一个值或者为一组值。
 <!--Vivian: @weiwei, please list the syntax how to set value array-->
 
-## Example: using parameter in SHELL script
+## 示例：在SHELL脚本中使用参数<example>
 
-For example, the following figure shows an example where parameters are used  in the SHELL script:
+你可以在SHELL脚本中设置参数，如下所示：
+
 ```
 java -cp ide.sdk-0.1.3.jar com.envision.dataplatform.C2R.C2RBeelineUtil -i
 ${inputPath}  -o ${outputPath} -ot ${outputTableName} -ca ${columnAll} -cm
@@ -31,7 +41,8 @@ ${columnMust} -cs ${columnSelected} -g ${group_name} -h "${HIVE_JDBC}" -u
 ${unix_timestamp} -z ${time_zone}
 ```
 
-Where you can assign values for the parameters as follows:
+你可以在参数配置中赋值给参数，如下所示：
+
 ```
 inputPath=/user/hive/warehouse/xiaoxiao_product_db.db/input
 outputPath=/tmp/xiaoxiao/output
@@ -41,4 +52,7 @@ columnMust=projectid,deviceid,updatetime,
 columnSelected=envi_monitor_pm1,envi_monitor_pm25
 time_zone=Asia/Shanghai
 ```
-![Example parameter settings](media/parameter_example_SHELL.jpg)
+
+.. image:: media/parameter_example_shell.png
+
+<!--end-->

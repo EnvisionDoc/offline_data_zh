@@ -1,39 +1,47 @@
-# Monitoring manual workflow instances
+# 监控手动任务流
 
-For a manual worflow, you can perform the following monitoring actions:
-- Viewing the workflow instance
-- Pre-running the workflow
-- Pre-running a selected task in the workflow
-- Pre-running a selected task and the subsequent tasks of the task
+你可以对手动任务流执行以下操作：
+- 查看任务流实例
+- 预跑手动任务流
+- 预跑单个任务
 
-## Viewing a manual workflow
+## 查看手动任务流<viewworkflow>
 
-You can view general information about a workflow and the detailed information about each task that is run in the workflow.
+你可以查看任务流的常规信息和任务流中每个任务的详细信息。
 
-To view a manual workflow, do the following steps:
-1. From the navigation panel, click **Task Monitor** > **Manual Scheduling**. A table of all workflows that you have access to is shown in the right panel.
-2. (Optional) In the search field above the table, enter the task ID or name to filter to result shown in the table.
-3. Click the name of the workflow that you want to inspect details for from the table. A workflow panel is shown.
-4. For each task node in the workflow, you can double-click the task node to view the following details:
-  - Attributes: settings of the task that is defined at the design time
+执行以下步骤查看手动任务流：
 
-    ![Task attributes in the workflow monitor](media/workflow_attributes.jpg)
+1. 在EnOS控制面板中，单击 **数据运维 > 手动任务**。右侧面板中显示了你可以访问的所有手动任务流。
 
-  - Task contents: what's run in the task. What's shown in the Task Contents tab varies according to the task type. The content of a data integration task might look something like this:
+2. （可选）在表格上方的搜索字段中，输入任务ID或名称过滤表格中显示的结果。
 
-    ![Task contents in the workflow monitor](media/workflow_taskcontents.jpg)
+3. 单击需查看详细信息的任务流的名称，将打开任务流面板。
 
-    While an SHELL task content would be something like this:
+4. 在任务流面板中，双击单个任务节点可查看以下详细信息：
 
-    ![Task contents in the workflow monitor](media/workflow_taskcontents2.jpg)
+   - **属性**：任务的配置详情。
 
-## Pre-running a manual workflow
+     .. image:: media/workflow_attributes.png
 
-To manually trigger a workflow, click **Pre-run** from the **Operations** column of the workflow and set the triggering time.
+   - **节点内容**：任务中运行的内容。具体内容因任务类型而异。
 
-## Pre-running a task
+     示例1，数据集成任务的内容如下所示：
 
-To manually trigger a task within the manual workflow:
+     .. image:: media/workflow_taskcontents.png
 
-1. Click the name of the workflow from the table.
-2. In the workflow panel, right-click the task and click **Pre-run** and set the triggering time.
+     示例2，SHELL任务的内容如下所示：
+
+     .. image:: media/workflow_taskcontents2.png
+
+
+## 预跑手动任务流<prerunworkflow>
+
+如需手动触发任务流，点击需预跑的任务流后的 **重跑** 并设置触发时间。
+
+## 预跑单个任务<preruntask>
+
+如需手动触发任务流中的单个任务：
+
+1. 单击需预跑的任务所属的任务流的名称，打开任务流面板。
+
+2. 在任务面板中，右键单击任务框，然后单击 **预跑** 并设置触发时间。

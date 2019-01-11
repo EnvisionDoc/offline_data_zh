@@ -1,39 +1,59 @@
-# Operating a task
-
-## Pre-running a task
-
-You can pre-run a single task. You can use this function to pinpoint issues with the task.
-
-1. Right click a task and click **Pre-run This Node** and specify the workflow triggering time.
-
-   **Note:**
-
-   - If a time before the current system time is selected as the trigger time, the workflow will be executed immediately to generate a running instance (viewable through the workflow monitor. When the workflow instance is running, the trigger time is regarded as the business time and is transmitted to the time parameter for business computing.
-   - Only one instance for the same workflow is allowed to run at a time. If the pre-run instance conflicts with the current running instance, the pre-run instance will wait till the completion of the running instance.
-
-2. Click **OK**, and the workflow instance ID will be displayed in the upper right corner of the page.
-
-3. You can then view the instance information in the task monitor.
-
-## Pre-running a task and its downstream
-
-You can pre-run a task and its downstream according to your needs. Note that the **True** and **False** conditions take effect in this case. When the relation from the current task to the subsequent task is false, the subsequent task is not run.
-
-1. Right click a task and click **Pre-run This Node and Downstream** and specify the workflow triggering time.
-
-2. Click **OK**, and the workflow instance ID will be displayed in the upper right corner of the page.
-
-3. You can then view the instance information in the task monitor.
+# 操作任务
 
 
-## Cloning a task
+## 预跑任务<prerun>
 
-1. Right-click the task and click **Copy**.
+你可以通过预跑一个任务来查明该任务的可能存在的问题。
 
-2. Move the cursor to a new position and click **Paste**.
+1. 在EnOS控制台中选择 **数据开发套件 > 任务开发**。
 
-## Deleting a task
+2. 在资源目录树中，双击需要预跑的任务流。
 
-Right-click the task and click **Delete**.
+3. 右击一个任务，选择 **预跑该节点** 并指定触发任务流时间。
 
-When you delete a task, the relations to the task are all removed.
+   .. note:: - 若触发时间为为当前时间之前，任务流将被立即触发并运行（可在数据运维中查看）。该触发时间将作为业务时间用于计算。
+           - 任务流同一时间只允许一个实例运行，若预跑实例与正在运行实例冲突，则依次执行。
+
+4. 单击 **确定**，任务流实例ID将显示在页面的右上角。
+
+5. 然后，你可以在数据运维查看实例的详细信息。
+
+## 预跑任务及其下游任务<prerundownstream>
+
+你可以通过预跑一个任务和其下游任务来查明该任务的可能存在的问题。
+
+您可以根据需要预先运行任务及其下游。
+
+.. note:: `True`和`False`关系条件设置将会对该本操作有效。如果当前任务与后续任务的关系为false时，则不运行后续任务。
+
+1. 在EnOS控制台中选择 **数据开发套件 > 任务开发**。
+
+2. 在资源目录树中，双击需要预跑的任务流。
+
+3. 右击一个任务，选择 **预跑该节点及下游** 并指定触发任务流时间。
+
+4. 单击 **确定**，任务流实例ID将显示在页面的右上角。
+
+5. 然后，你可以在数据运维中查看实例的详细信息。
+
+
+## 复制任务<copy>
+
+1. 在EnOS控制台中选择 **数据开发套件 > 任务开发**。
+
+2. 在资源目录树中，双击任务所属的任务流。
+
+3. 右击需要复制的任务，选择 **复制**。
+
+4. 将光标移动到新位置，右击并选择 **粘贴**。
+
+
+## 删除任务<delete>
+
+当删除一个任务时，所有和该任务有关的关系都将被删除。
+
+1. 在EnOS控制台中选择 **数据开发套件 > 任务开发**。
+
+2. 在资源目录树中，双击任务所属的任务流。
+
+3. 右击需要删除的任务，选择 **删除**。

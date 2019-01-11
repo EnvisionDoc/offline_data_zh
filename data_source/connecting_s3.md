@@ -1,41 +1,42 @@
-# Configuring an Amazon S3 data source
+# 配置Amazon S3数据源
 
-This topic instructs how to configure the connection to an Amazon S3  data source.
-
-
-## About this task
-To retrieve data from an external Amazon S3 database for analysis, Create a data source configuration that specifies the cloud region where the database sits in AWS, the credentials to use to access the S3 database, and other information about the data source.
-
-## Procedure
-
-1. In the EnOS Console, click **Data Source** from the left navigation panel.
-
-2. In the **Data Source** panel, click **Add Data Source**.
-
-3. In the **Data Source** window, provide the following settings:
-
-   - **Data source name**:  the name of the data source. The name can be a combination of the following characters:
-     - Chinese characters
-     - a through z
-     - A through Z
-     - 0 through 9
-     - _ (underscore)  
-     The maximum length of the data source name is 50 characters.
-   - **Data source type**: S3
-   - **Region**: the cloud region of the S3 database.
-   - **Access key ID**: the access key ID of the S3 database.
-   - **Secret access key**: the access key to use to sign the requests sent to the S3 database.
-   - **Data source description**: a description of the data source.
-
-4. Click **OK** to save the configuration.
+本文描述了如何配置与Amazon S3数据源的连接。
 
 
-## Results
+## 关于任务<description>
 
-After the connection is created, the data source item is shown in the **Data Source** table.
+要从外部Amazon S3数据库检索数据以进行分析，首先需要配置该数据库位于AWS中的云区域，用于访问S3数据库的凭据以及数据源相关的其他信息。
 
-## What to do next
 
-When the connection is successfully established, EnOS retrieves the data from the external data source to the EnOS internal Hive database. You must create the Hive table to store the retrived data. For more information, see [Creating Hive table](https://docs.envisioniot.com/docs/analysis-report/en/latest/data_explorer/creating_hivetable.html) in *Data Analysis and Report*.
 
-You can then configure a data integration workflow to synchronize data from the data source to the target table in EnOS. For more information, see [Data Integration](../data_integration/index).
+## 步骤<procedure>
+
+1. 在EnOS控制面板中选择 **数据源管理**。
+
+2. 点击 **新增数据源**。
+
+3. 在 **数据源** 窗口，提供以下配置：
+
+   - **数据源名称**：数据源的名称。数据源名称的最大长度为50个字符，名称可以是以下字符的组合：
+     - 中文
+     - a - z
+     - A - Z
+     - 0 - 9
+     - _ （下划线）
+
+   - **数据源类型**：S3
+   - **区域**：S3数据库所属云区域。
+   - **访问密钥ID**：S3数据库的访问密钥ID。
+   - **私有访问密钥**：用于对发送到S3数据库的请求进行签名的访问密钥。
+   - **数据源描述**：数据源的描述。
+
+## 结果<result>
+
+连接创建后，该数据源项将显示在 **数据源管理** 的列表中。
+
+
+## 后续操作<followup>
+
+成功建立连接后，EnOS会将数据从外部数据源提取到EnOS内部的Hive数据库。你必须创建Hive表存储已提取到的数据。更多信息，参考[创建Hive表](https://docs.envisioniot.com/docs/data-explorer/zh_CN/latest/creating_hivetable.html)。
+
+接着，你可以配置一个数据集成任务流，将数据从数据源同步到EnOS中的目标表。更多信息，参考[数据集成](../data_integration/index)。

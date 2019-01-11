@@ -1,33 +1,38 @@
-# Getting started with batch data processing
+# 批处理快速入门
 <!--
 The short description should be a single, concise paragraph that contains one or two sentences and no more than 50 words.
-Briefly mention what the user's learning goal is and include the following SEO keywords in the title short description: EnOS, ServiceName, tutorial.
+Briefly mention what the user's learning goal is and include the following SEO keywords in the title short description: EnOS™, ServiceName, tutorial.
 -->
 
-A typical flow to use EnOS to analyze your historical data is as follows:
+使用EnOS分析历史数据的典型流程如下：
 
-![Four steps to get started with offline data processing](media/getting_started.jpg)
+.. image:: media/getting_started.png
+   :width: 700px
 
-## Step 1: Prepare the data source and target  
+## 步骤1：准备数据源和目标数据库<preparedatasource>
 
-1. Prepare the data source.
-   - If the data source is external, you'll first need to set up connection to the source data. EnOS supports to synchronize data from MYSQL, SQL, Oracle, FTP, SFTP, and Amazon S3 data sources. For information about how to connect to a specified database, see [Data Source](data_source/index).
-   - If the data you want to process and analyze is on EnOS, such as the device master data accumulated and stored on EnOS. You can skip this substep.
+1. 准备数据源
 
-2. Prepare the target Create a hive table hosted on EnOS to store the data synchronized from the data source. For more information, see [Creating a hive table](https://docs.envisioniot.com/docs/analysis-report/en/latest/data_explorer/creating_hivetable.html) in *Data Analysis and Report*.
+   - 如果数据源来自外部的，首先需要设置与源数据的连接。EnOS支持同步MYSQL，SQL，Oracle，FTP，SFTP和Amazon S3数据库的数据。有关如何连接到数据库的信息，参考[数据源管理](data_source/index)。
+   - 如果处理和分析的数据位于EnOS云端，例如，设备主数据累加并存储到EnOS中。可跳过此步骤。
 
-## Step 2: Synchronize the data from your data source to EnOS
+2. 准备目标源
 
-For external data source, you can create data integration workflows from sratch or from importing existing workflows to synchronize your data. You can schedule one-time or periodical workflows as you need. For more information, see [Data integration](data_integration/index)
+   在EnOS上创建用于存储从数据源同步来的数据的配置单元表（Hive）。更多信息，参考[创建Hive表](https://docs.envisioniot.com/docs/data-explorer/zh_CN/latest/creating_hivetable.html)。
 
-For master data synchrization, you can use the Data IDE function to create a workflow that uses the `SYNC_MDM` program. For more information, see [Data IDE](data_ide/index).
+## 步骤2: 从数据源同步数据至EnOS<synchronizetoenos>
 
-## Step 3: Process the data
+   对于外部数据源，可以从零开始创建或导入已有的任务流同步数据。任务流可根据你的需求设置为手动调度或周期调度。更多信息，参考[数据集成](data_integration/index)。
 
-Use the Data IDE function to process your data, for example, converting columns to rows. EnOS provides rich data processing library that is ready to use.
+   对于主数据同步，可以使用大数据开发套件功能创建使用`SYNC_MDM`程序的任务流。更多信息，参考[数据开发套件](data_ide/index)。
 
-For more information, see [Data IDE](data_ide/index).
+## 步骤3：处理数据<process>
 
-## Step 4: (Optional) Explore the data
+   使用数据开发套件处理数据，例如，将列转换为行。EnO提供了丰富的数据处理SDK通用库。
 
-Optionally, you can use the Data Explorer function to help you perform interactive data analytics and visualization before you start to use the data for futher purposes such as dashboard and business intelligence. For more information, see [Data Explorer](https://docs.envisioniot.com/docs/analysis-report/en/latest/data_explorer/overview.html) in *Data Analysis and Report*.
+   更多信息，参考[数据开发套件](data_ide/index)。
+
+
+## 步骤4：（可选）探索数据<explorerdata>
+
+   EnOS数据探索帮助你执行交互式数据分析和可视化，并将这些数据用于数据可视化和商业智能等目的。更多信息，参考[数据探索](https://docs.envisioniot.com/docs/data-explorer/zh_CN/latest/dataexplorer_overview.html)。

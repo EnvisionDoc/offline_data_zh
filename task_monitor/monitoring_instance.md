@@ -1,30 +1,33 @@
-# Monitoring workflow instances
+# 监控任务流实例
 
-For a worflow instance, you can perform the following monitoring actions:
+你可以对任务流实例执行以下操作：
 
-- Viewing details and logs of the instance
-- Re-running the instance
-- Stopping the instance
+- 查看实例的详细信息和日志
+- 重跑实例
+- 终止运行实例
 
+## 查看实例的详细信息和日志
 
-## Viewing details and logs of the instance
+执行以下步骤可查看手动或定期任务流的实例：
 
-To view an instance of a manual or periodic workflow, do the following steps:
+1. 在EnOS控制面板中，选择 **数据运维 > 手动任务** 或 **数据运维 > 周期任务**。将显示过去24小时内生成的所有实例。
 
-1. From the navigation panel, click **Task Monitor** > **Manual Instance** or **Task Monitor** > **Periodic Instance**. A table of all instances that are generated in the last 24 hours are shown.
-2. (Optional) In the search field above the table, enter the instance ID or name to filter the result shown in the table.
-3. Click the name of the instance that you want to inspect details for from the table. A workflow panel is shown.
-4. For each task node in the workflow, you can double-click the task node to view the following details:
-  - Attributes: settings of the task that is defined at the design time
-  - Scheduling Log: the log of the instance, and you can download the log for analysis.
-  - Task contents: what's run in the task. What's shown in the Task Contents tab varies according to the task type.
+2. （可选）在表格上方的搜索字段中，输入实例ID或名称过滤表格中显示的结果。
 
-## Re-running an instance
+3. 单击需检查详细信息的实例的名称，将打开任务流面板。
 
-When the status of the instance is **success**, **failed**, **canceled** or **skipped**, it can be re-run. In this case, the current task flow instance and its downstream nodes are re-run.
+4. 在任务流面板中，双击单个任务节点可查看以下详细信息：
 
-## Stopping an instance
+   - 属性：任务的配置详情。
+   - 调度运行日志：实例的日志，支持下载日志对其分析。
+   - 节点内容：任务中运行的内容。具体内容因任务类型而异。
 
-When the status of the instance is **initializing**, **running** or **failed**. you can click **Stop Running** to immediately stop running the current instance. However, instances already submitted for batch data processing can not be stopped.
+## 重跑实例
 
-As long as one node fails to run in a workflow instance, the status of the entire workflow instance fails. However, the workflow instance might not have been completed. In this case, you can stop it manually.
+当实例的状态为 **成功**，**失败**，**取消** 或 **跳过** 时，可以点击 **重跑** 重新运行实当前任务流实例及其下游节点。
+
+## 终止运行实例
+
+当实例的状态为 **初始化**，**运行** 或 **失败** 时，可以点击 **终止运行** 立即停止运行当前实例。但是，已提交的批处理数据的实例无法被停止。
+
+只要任务流中有一个节点运行失败，整个任务流的状态即显示为失败。然而，任务流实例可能并未运行完成。在这种情况下，你可以手动终止该实例。

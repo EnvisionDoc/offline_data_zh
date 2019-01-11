@@ -1,11 +1,9 @@
-# Data integration overview
+# 数据集成概述
 
-The data integration function supports synchronizing data between extensive heterogeneous data sources.
+数据集成功能实现了在多种异构数据源之间的数据同步。主要运用于帮助数据开发人员将源数据库中的结构化数据同步到EnOS中的Hive库。
 
-The major use case of data integration is to help data developers synchronize structured data from source databases to the Hive Library in EnOS.
+数据集成任务流是一种特定类型的任务流。数据集成任务流的本质是包含单一数据集成任务类型的任务流。
 
-A data integration workflow is specific type of workflow. The essence of a data integration workflow is a workflow with a single data-integration type of task.
+数据集成功能仅支持结构化数据的同步，即可作为二维表抽象的数据。
 
-The data integration function only supports synchronization of structured data, that is data which can be abstracted as two-dimensional tables.
-
-Unstructured data such as MP3 is not supported by data integration. However, you can schedule SHELL-type of tasks in a workflow to synchronize the unstructured data. For information about unstructured data synchronization, see [Data IDE](../data_ide/dataide_overview).
+如需集成非结构化数据，如MP3。可在任务流中设置SHELL类型的任务来同步非结构化数据。有关同步非结构化数据的信息，参考[Data IDE](../data_ide/dataide_overview)。

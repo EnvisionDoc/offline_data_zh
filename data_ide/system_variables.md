@@ -1,210 +1,158 @@
-# Supported system variables
+# 系统变量列表
 
-You can use variables in path and parameter settings, you can also use variables directly in your SHELL script.
-
-
-## Business-related variables
-
-Before you start to use the service-related variables, note the following key concepts:
-
-**Triggering time**： The time when a workflow is triggered. It can be the time when you manually trigger the workflow, or when the workflow is automatically triggered according to scheduling settings.
-
-**Business date**: The date from which the data starts to be  processed by the workflow. Service date is generated based on the triggering time by deducting one day from the triggering time (because the batch job is performed against the data of yesterday by default). For example, when the triggering time is `2017-05-27 13:50:00`, and the scheduled cycle is one day. Then the business date is `2017-05-26`, meaning the data on `2017-05-26` will be processed at the triggering time of `2017-05-27 13:50:00`. With that said, if you want to process the data of the date 2018-03-01, you must set the triggering time to some time on 2018-03-02.
-
-The following table explains the system variables by using `2017-05-27 13:50:00` as the example triggering time.
-
-<body>
-<table border="1" cellspacing="0" cellpadding="0">
-  <tr>
-    <td width="113" valign="top"><p align="center"><strong>Variable</strong></p ></td>
-    <td width="203" valign="top"><p align="center"><strong>Description</strong></p ></td>
-    <td valign="top"><p align="center"><strong>Format</strong></p ></td>
-    <td valign="top"><p align="center"><strong>Business Date</strong></p ></td>
-    <td valign="top"><p align="center"><strong>Variable Value</strong></p ></td>
-  </tr>
-  <tr>
-    <td width="113" valign="top"><p align="left">${last_week8}</p ></td>
-    <td width="203" valign="top"><p align="left">- Using   triggering time as the basis, indicates&nbsp;<strong>Last week</strong>。<br>
-      - Using business date as the basis, indicates business date minus 6 days.</p ></td>
-    <td valign="top"><p align="left">YYYYMMDD</p ></td>
-    <td valign="top"><p align="left">2017-05-26</p ></td>
-    <td valign="top"><p align="left">20170520</p ></td>
-  </tr>
-  <tr>
-    <td width="113" valign="top"><p align="left">${last_week10}</p ></td>
-    <td width="203" valign="top"><p align="left">- Using   triggering time as the basis, indicates&nbsp;<strong>Last week</strong>。<br>
-      - Using business date as the basis, indicates business date minus 6 days.</p ></td>
-    <td valign="top"><p align="left">YYYY-MM-DD</p ></td>
-    <td valign="top"><p align="left">2017-05-26</p ></td>
-    <td valign="top"><p align="left">2017-05-20</p ></td>
-  </tr>
-  <tr>
-    <td width="113" valign="top"><p align="left">${cal_dt}</p ></td>
-    <td width="203" valign="top"><p align="left">- Using   triggering time as the basis, indicates&nbsp;<strong>yesterday</strong>。<br>
-      - Using business date as the basis, indicates today.</p ></td>
-    <td valign="top"><p align="left">YYYY-MM-DD</p ></td>
-    <td valign="top"><p align="left">2017-05-26</p ></td>
-    <td valign="top"><p align="left">2017-05-26</p ></td>
-  </tr>
-  <tr>
-    <td width="113" valign="top"><p align="left">${cal_dt8}</p ></td>
-    <td width="203" valign="top"><p align="left">- Using   triggering time as the basis, indicates&nbsp;<strong>yesterday</strong>。<br>
-      - Using business date as the basis, indicates today.</p ></td>
-    <td valign="top"><p align="left">YYYYMMDD</p ></td>
-    <td valign="top"><p align="left">2017-05-26</p ></td>
-    <td valign="top"><p align="left">20170526</p ></td>
-  </tr>
-  <tr>
-    <td width="113" valign="top"><p align="left">${ncal_dt}</p ></td>
-    <td width="203" valign="top"><p align="left">Using   triggering time as the basis, indicates&nbsp;<strong>today</strong>。<br>
-      Using business date as the basis, indicates today+1.<br>
-      Format: YYYY-MM-DD</p ></td>
-    <td valign="top"><p align="left">YYYY-MM-DD</p ></td>
-    <td valign="top"><p align="left">2017-05-26</p ></td>
-    <td valign="top"><p align="left">2017-05-27</p ></td>
-  </tr>
-  <tr>
-    <td width="113" valign="top"><p align="left">${ncal_dt8}</p ></td>
-    <td width="203" valign="top"><p align="left">Using   triggering time as the basis, indicates&nbsp;<strong>today</strong>.<br>
-      Using business date as the basis, indicates today+1.<br>
-      Format: YYYYMMDD</p ></td>
-    <td valign="top"><p align="left">YYYYMMDD</p ></td>
-    <td valign="top"><p align="left">2017-05-26</p ></td>
-    <td valign="top"><p align="left">20170527</p ></td>
-  </tr>
-  <tr>
-    <td width="113" valign="top"><p align="left">${end_day_this_month8}</p ></td>
-    <td width="203" valign="top"><p align="left">Using business   date as the basis, indicates&nbsp;<strong>last day of this month.</strong></p ></td>
-    <td valign="top"><p align="left">YYYYMMDD</p ></td>
-    <td valign="top"><p align="left">2017-05-26</p ></td>
-    <td valign="top"><p align="left">20170531</p ></td>
-  </tr>
-  <tr>
-    <td width="113" valign="top"><p align="left">${end_day_this_month10}</p ></td>
-    <td width="203" valign="top"><p align="left">Using business   date as the basis, indicates&nbsp;<strong>last day of this month.</strong></p ></td>
-    <td valign="top"><p align="left">YYYY-MM-DD</p ></td>
-    <td valign="top"><p align="left">2017-05-26</p ></td>
-    <td valign="top"><p align="left">2017-05-31</p ></td>
-  </tr>
-  <tr>
-    <td width="113" valign="top"><p align="left">${first_day_this_month8}</p ></td>
-    <td width="203" valign="top"><p align="left">Using business   date as the basis, indicates&nbsp;<strong>first day of this month</strong>。 </p ></td>
-    <td valign="top"><p align="left">YYYYMMDD</p ></td>
-    <td valign="top"><p align="left">2017-05-26</p ></td>
-    <td valign="top"><p align="left">20170501</p ></td>
-  </tr>
-  <tr>
-    <td width="113" valign="top"><p align="left">${first_day_this_month10}</p ></td>
-    <td width="203" valign="top"><p align="left">Using business   date as the basis, indicates&nbsp;<strong>first day of this month</strong>。 </p ></td>
-    <td valign="top"><p align="left">YYYY-MM-DD</p ></td>
-    <td valign="top"><p align="left">2017-05-26</p ></td>
-    <td valign="top"><p align="left">2017-05-01</p ></td>
-  </tr>
-  <tr>
-    <td width="113" valign="top"><p align="left">${first_day_last_month8}</p ></td>
-    <td width="203" valign="top"><p align="left">Using business   date as the basis, indicates&nbsp;<strong>first day of last month</strong>。 </p ></td>
-    <td valign="top"><p align="left">YYYYMMDD</p ></td>
-    <td valign="top"><p align="left">2017-05-26</p ></td>
-    <td valign="top"><p align="left">20170401</p ></td>
-  </tr>
-  <tr>
-    <td width="113" valign="top"><p align="left">${first_day_last_month10}</p ></td>
-    <td width="203" valign="top"><p align="left">Using business   date as the basis, indicates&nbsp;<strong>first day of last month</strong>。 </p ></td>
-    <td valign="top"><p align="left">YYYY-MM-DD</p ></td>
-    <td valign="top"><p align="left">2017-05-26</p ></td>
-    <td valign="top"><p align="left">2017-04-01</p ></td>
-  </tr>
-  <tr>
-    <td width="113" valign="top"><p align="left">${last_day_last_month8}</p ></td>
-    <td width="203" valign="top"><p align="left">Using business   date as the basis, indicates&nbsp;<strong>last day of last month</strong>。 </p ></td>
-    <td valign="top"><p align="left">YYYYMMDD</p ></td>
-    <td valign="top"><p align="left">2017-05-26</p ></td>
-    <td valign="top"><p align="left">2017-04-30</p ></td>
-  </tr>
-  <tr>
-    <td width="113" valign="top"><p align="left">${last_day_last_month10}</p ></td>
-    <td width="203" valign="top"><p align="left">Using business   date as the basis, indicates&nbsp;<strong>last day of last month</strong>。 </p ></td>
-    <td valign="top"><p align="left">YYYY-MM-DD</p ></td>
-    <td valign="top"><p align="left">2017-05-26</p ></td>
-    <td valign="top"><p align="left">201704-30</p ></td>
-  </tr>
-  <tr>
-    <td width="113" valign="top"><p align="left">${monday_next_week8}</p ></td>
-    <td width="203" valign="top"><p align="left">Using business   date as the basis, indicates&nbsp;<strong>next Monday</strong>。 </p ></td>
-    <td valign="top"><p align="left">YYYYMMDD</p ></td>
-    <td valign="top"><p align="left">2017-05-26</p ></td>
-    <td valign="top"><p align="left">20170529</p ></td>
-  </tr>
-  <tr>
-    <td width="113" valign="top"><p align="left">${monday_next_week10}</p ></td>
-    <td width="203" valign="top"><p align="left">Using business   date as the basis, indicates&nbsp;<strong>next Monday</strong>。 </p ></td>
-    <td valign="top"><p align="left">Format:   YYYY-MM-DD</p ></td>
-    <td valign="top"><p align="left">2017-05-26</p ></td>
-    <td valign="top"><p align="left">2017-05-29</p ></td>
-  </tr>
-  <tr>
-    <td width="113" valign="top"><p align="left">${30days_cal_dt}</p ></td>
-    <td width="203" valign="top"><p align="left">Using business   date as the basis, indicates&nbsp;<strong>30 days ago</strong>。 </p ></td>
-    <td valign="top"><p align="left">Format:   YYYY-MM-DD</p ></td>
-    <td valign="top"><p align="left">2017-05-26</p ></td>
-    <td valign="top"><p align="left">2017-0</p ></td>
-  </tr>
-</table>
-</body>
+你可以在路径和参数设置中使用变量，也可以直接在SHELL脚本中使用变量。
 
 
-## Time related variables
+## 业务相关变量<businessrelated>
 
-The following table explains the time-related variables by using `2017-05-27 13:50:00` as the example triggering time.
+在开始使用业务相关的变量之前，需了解以下关键概念：
 
-<body>
-<table border="1" cellspacing="0" cellpadding="0">
-  <tr>
-    <td valign="top"><p align="center"><strong>Variable</strong></p ></td>
-    <td valign="top"><p align="center"><strong>Description</strong></p ></td>
-    <td valign="top"><p align="center"><strong>Value</strong></p ></td>
-  </tr>
-  <tr>
-    <td valign="top"><p>${this_hour}</p ></td>
-    <td valign="top"><p>The hour when the workflow is triggered</p ></td>
-    <td valign="top"><p>2017-05-27 13:00:00</p ></td>
-  </tr>
-  <tr>
-    <td valign="top"><p>${unix_timestamp}</p ></td>
-    <td valign="top"><p>Unix time corresponding to the triggering   time</p ></td>
-    <td valign="top"><p>1495864241</p ></td>
-  </tr>
-</table>
-</body>
+**触发时间**：触发任务流的日期。可以为手动触发任务流的时间，也可以为设置的自动触发任务流的时间。
 
-## Non-time related variables
+**业务时间**: 任务流所处理的数据的日期。通常，业务日期为触发时间减去一天（因为默认情况下任务流是对前一天的数据执行处理操作）。
 
-<body>
-<table border="1" cellspacing="0" cellpadding="0">
-  <tr>
-    <td valign="top"><p align="center"><strong>Variable</strong></p ></td>
-    <td valign="top"><p align="center"><strong>Description</strong></p ></td>
-    <td valign="top"><p align="center"><strong>Example</strong></p ></td>
-  </tr>
-  <tr>
-    <td valign="top"><p>${task_id}</p ></td>
-    <td valign="top"><p>Task ID of the current instance</p ></td>
-    <td valign="top"><p>2017-05-27 13:00:00</p ></td>
-  </tr>
-  <tr>
-    <td valign="top"><p>${instance_id}</p ></td>
-    <td valign="top"><p>Current instance ID</p ></td>
-    <td valign="top"><p>1495864241</p ></td>
-  </tr>
-  <tr>
-    <td valign="top"><p>${env.APP_CUSTOMER}</p ></td>
-    <td valign="top"><p>The group account who generated the   instance</p ></td>
-    <td valign="top"><p>CLP</p ></td>
-  </tr>
-  <tr>
-    <td valign="top"><p>${env.APP_ID}</p ></td>
-    <td valign="top"><p>The App ID that the instance belongs to</p ></td>
-    <td valign="top"><p>a22b94f9-3b9d-40f6-9bd8-4d66b304d930</p ></td>
-  </tr>
-</table>
-</body>
+例如，当该任务流的触发时间为`2017-05-27 13:50:00`，周期被设置为一天。那么在`2017-05-27 13:50:00`这个时间点被触发的任务流处理的数据为业务日期`2017-05-26`当天的数据。同样的，如果要处理业务日期`2018-03-01`当天的数据，则触发时间需设置为`2018-03-02`这天的某个时间点。
+
+
+下表使用触发时间`2017-05-27 13：50：00`作为列子来说明业务相关变量。
+
+.. list-table::
+   :widths: auto
+
+   * - 变量
+     - 描述
+     - 格式
+     - 业务时间
+     - 变量值
+   * - ${last_week8}
+     - + 对于触发时间，表示&nbsp;上个星期。<br>
+       + 对于业务日期，表示业务日期减去6天。
+     - YYYYMMDD
+     - 2017-05-26
+     - 20170520
+   * - ${last_week10}
+     - + 对于触发时间，表示&nbsp;上个星期。<br>
+       + 对于业务日期，表示业务日期减去6天。
+     - YYYY-MM-DD
+     - 2017-05-26
+     - 2017-05-20
+   * - ${cal_dt}
+     - + 对于触发时间，表示&nbsp;昨天。<br>
+       + 对于业务日期，表示&nbsp;今天。
+     - YYYY-MM-DD
+     - 2017-05-26
+     - 2017-05-26
+   * - ${cal_dt8}
+     - + 对于触发时间，表示&nbsp;昨天。
+       + 对于业务日期，表示&nbsp;今天。
+     - YYYYMMDD
+     - 2017-05-26
+     - 20170526
+   * - ${ncal_dt}
+     - + 对于触发时间，表示&nbsp;今天。
+       + 对于业务日期，表示&nbsp;明天。
+     - YYYY-MM-DD
+     - 2017-05-26
+     - 2017-05-27
+   * - ${ncal_dt8}
+     - + 对于触发时间，表示&nbsp;今天。
+       + 对于业务日期，表示&nbsp;明天。
+     - YYYYMMDD
+     - 2017-05-26
+     - 20170527
+   * - ${end_day_this_month8}
+     - 对于业务日期，表示&nbsp;本月最后一天。
+     - YYYYMMDD
+     - 2017-05-26
+     - 20170531
+   * - ${end_day_this_month10}
+     - 对于业务日期，表示&nbsp;本月最后一天。
+     - YYYY-MM-DD
+     - 2017-05-26
+     - 2017-05-31
+   * - ${first_day_this_month8}
+     - 对于业务日期，表示&nbsp;本月第一天。
+     - YYYYMMDD
+     - 2017-05-26
+     - 20170501
+   * - ${first_day_this_month10}
+     - 对于业务日期，表示&nbsp;本月第一天。
+     - YYYY-MM-DD
+     - 2017-05-26
+     - 2017-05-01
+   * - ${first_day_last_month8}
+     - 对于业务日期，表示&nbsp;上月第一天。
+     - YYYYMMDD
+     - 2017-05-26
+     - 20170401
+   * - ${first_day_last_month10}
+     - 对于业务日期，表示&nbsp;上月第一天。
+     - YYYY-MM-DD
+     - 2017-05-26
+     - 2017-04-01
+   * - ${last_day_last_month8}
+     - 对于业务日期，表示&nbsp;上月最后一天。
+     - YYYYMMDD
+     - 2017-05-26
+     - 2017-04-30
+   * - ${last_day_last_month10}
+     - 对于业务日期，表示&nbsp;上月最后一天。
+     - YYYY-MM-DD
+     - 2017-05-26
+     - 201704-30
+   * - ${monday_next_week8}
+     - 对于业务日期，表示&nbsp;下个星期一。
+     - YYYYMMDD
+     - 2017-05-26
+     - 20170529
+   * - ${monday_next_week10}
+     - 对于业务日期，表示&nbsp;下个星期一。
+     - YYYY-MM-DD
+     - 2017-05-26
+     - 2017-05-29
+   * - ${30days_cal_dt}
+     - 对于业务日期, 表示&nbsp;30天之前。
+     - YYYY-MM-DD
+     - 2017-05-26
+     - 2017-0
+
+
+## 时间相关变量<timerelated>
+
+下表使用触发时间`2017-05-27 13：50：00`作为列子来说明时间相关变量。
+
+.. list-table::
+   :widths: auto
+
+   * - 变量
+     - 描述
+     - 变量值
+   * - ${this_hour}
+     - 出发任务流的时间（小时为单位）
+     - 2017-05-27 13:00:00
+   * - ${unix_timestamp}
+     - 对应Unix时间的触发时间
+     - 1495864241
+
+## 非时间相关变量<nontimerelated>
+
+.. list-table::
+   :widths: auto
+
+   * - 变量
+     - 描述
+     - 变量值
+   * - ${task_id}
+     - 当前实例的任务ID
+     - 2017-05-27 13:00:00
+   * - ${instance_id}
+     - 当前实例ID
+     - 1495864241
+   * - ${env.APP_CUSTOMER}
+     - 生成实例的组帐户
+     - CLP
+   * - ${env.APP_ID}
+     - 实例所属的App ID
+     - a22b94f9-3b9d-40f6-9bd8-4d66b304d930
+
+<!--end-->

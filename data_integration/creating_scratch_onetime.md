@@ -1,119 +1,154 @@
-# Creating a one-time synchronization workflow from scratch
+# 创建从外部数据库同步数据到Hive库的手动调度的任务
 
-How to create a one-time data synchronization workflow from scratch.
-
-## Before you begin
-
-You must have created the target Hive table to synchronize the data to. For more information, see [Creating a Hive table](https://docs.envisioniot.com/docs/analysis-report/en/latest/data_explorer/creating_hivetable.html) in *Data Analysis and Report*.
-
-## Step 1: Create an data integration workflow
-
-1. Click **Data Integration** from the left navigation tree and click **New Data Integration Workflow**.
-2. In the **New Data Integration Workflow** window, provide the basic settings about the workflow.
-   - Mode: Select **Create** to create a workflow from scratch. If you select **Import from Configuration**, go to [Creating by importing an existing workflow configuration](importing_existing_config).
-   - Name: Enter the name of workflow.
-   - Type: Select **One-time**.
-   - Description: Provide a descriptive information about the workflow.
-   - Select Directory: Select the directory to save the workflow.
-
-3. Click **OK**.
-
-## Step 2: Select the data source
-
-### SQL, MySQL, or Oracle database
-
-When you select to synchronize from a SQL, MySQL, or Oracle database, provide the following settings:
-
-1. Select from the list of existing data source or create a new data source. For more information, see [Data source overview](../data_source/datasource_overview).
-2. Select which table to synchronize from the database.
-3. (Optional) If you want to filter the data to be synchronized, provide the SQL query script. Note that you don't need to enter `where`. For example
-   ```
-   age_4 >=40
-   ```
-
-4. (Optional) Click **Preview Data**. You can then preview the resultant data to synchronize as shown in the following figure:
-    ![Preview data](media/sql_source.png)
-
-5. Click **Next**.
-
-### Text-based data in FTP, SFTP, or S3
-
-When you select to synchronize from an FTP, SFTP, or S3 data source, EnOS transforms the text-based data into a two-dimension table according to your settings:
-
-1. Select from the list of existing data source or create a new data source. For more information, see [Data source overview](../data_source/datasource_overview).
-2. Specify the URL to the data source. When the directory contains multiple files, the data records are merged. In this case, ensure that all data in the same directory has the same columns.
-3. Specify the column delimiter that is used in the text-based data file, such as tabulator, comma, semicolon, space or other delimiters.
-4. Specify the encoding format of the data file: UTF-8, GBK, or GB2312.
-5. Specify the compression format of the data file.
-6. Specify the number of header rows in the data file are to be ignored when loading the data.
-7. Specify the header to add for the source table.
-   ![Specify source](media/s3_source.png)
-
-8. (Optional) Click **Preview Data**.
-9. Click **Next**.
+本文描述了如何从零开始创建从外部数据库同步数据到Hive库的手动调度的任务。
 
 
-## Step 3: Select the target table
+## 开始前准备<beforestart>
 
-The only type supported now is Hive. Provide the following settings abut the target table.
-1. Select the target table.
-2. If the Hive table is partitioned, the partitions are automatically loaded.
-3. Specify the target partition. You can specify the partition through the following methods:
-   - Column name: The system creates new partitions based on the values in this column. If the column is date for example, and the column values are `20180501` and `20180502`, then two partitions are created, each for one day.
-   - Fixed value: If 2017-10-11 is entered for example, the data will be automatically synchronized to the `2017-10-11` partition of the target table.
-   - Placeholder: You can use system reserved or custom parameters, for example, the system variable `${cal_dt}`. For more information about the usage of system variable, see [System variables](../data_ide/system_variables).
-    ![Preview data](media/sql_target.png)  
-
-4. Specify whether to overwrite the existing data in the target table, or append the data behind the existing data records.
-5. Click **Next**.
-
-## Step 4: Configure field mapping between source and target
-In this step, you'll map the source fields to the target fields.
-
-1. For each field in the **Target Fields** column, click the source field from the **Source Fields** column to map the source with target.
-   ![Mapping fields](media/sql_mapping.png)
-2. When you finish mapping each field, click **Next**.
-
-## Step 5: Specify scheduling settings
-
-1. Click **Scheduling Settings** from the right edge of the configuration panel.
-2. Provide the basic settings:
-   - **Owner**: Select the workflow owner from the list of users in the organization who have access to data integration. It is the workflow creator by default. As the creator, you cannot delete yourself. You can add othher owners, however, in the same organization.
-   - **Description**: (Optional) Provide a description.
-   - **Alert Mode**: Select how to alert the workflow owner. Email is always selected.
-      - E-mail: an alert e-mail is sent to the owner when an instance meets the alert conditions.
-      - SMS: A phone number must be verified during user registration for use of SMS alert. The SMS alert is sent to only the owner when an instance meets the alert conditions.
+你必须已创建用于存放同步数据的目标Hive表。更多信息，参考[创建Hive表](https://docs.envisioniot.com/docs/data-explorer/zh_CN/latest/creating_hivetable.html)。
 
 
-## Step 6: Specify parameters
+## 步骤1：创建数据集成任务<createworkflow>
 
-When parameters are used when you configure the data source and target, specify parameter values. You can specify constants, system variables, or custom variables for a parameter. The procedure is as follows:
+1. 在EnOS控制面板中选择 **数据集成**。
 
-1. Click **Parameter Settings** from the right edge of the configuration panel.
-2. For each parameter that you used, provide the values. For example, you may use parameter when you set the URL to your S3 data source:
-  `s3://history/log_solar_dt_change_inverter/${test_list}.each_value`
+2. 点击目录树上方的 **+**，新建数据集成任务。
 
-  Where `test_list` is a parameter. You can then assign values for the parameter as follows:
-  `test_list=Array[20170515,20170516,20170517,20170518,20170519,20170520]`
+3. 在 **新建数据集成任务** 窗口中，提供有关任务的基本设置。
 
-  You parameter setting will cause EnOS to synchronize all data from the directories as specified by the parameter values.
+   - 模式：选择 **创建** 以从零开始创建集成任务。如果选择 **导入任务配置**，参考[基于已有任务创建新的集成任务](importing_existing_config)。
+   - 名称：输入集成任务的名称。
+   - 类型：选择 **手动调度**。
+   - 说明：提供有关集成任务的描述性信息。
+   - 选择目录：选择保存集成任务的目录。
 
-You can assign system variables as parameter values. For more information, see [Supported system variables](../data_ide/system_variables).
-
-## Step 7: Configure concurrency
-Select the number of concurrent connections to establish and click **Next**.
-
-The database endures a larger load when you set a larger concurrency number. When the total transmission rate is fixed, the rate of a single concurrent connection is smaller.
+4. 单击 **确定** 完成创建。
 
 
-## Step 8: Review and save the configuration
+## 步骤2： 选择数据源<selectdatasource>
 
-Preview the settings, edit when necessary, and click **Save** to save the synchronization configuration.
+### SQL、MySQL或Oracle数据库<database>
 
-## What to do next
+如选择从SQL、MySQL或Oracle数据库同步时，需提供以下设置：
 
-Click **Pre-run** to trigger the workflow.
+1. 从已有的数据源列表中选择数据源或创建新数据源。更多信息，请参阅[数据源概述](../data_source/datasource_overview)。
 
-After a workflow is run, an instance is generated. You can then trace the details about the instance through the task monitor. For more information, see [Task monitor](../task_monitor/monitoring_workflow_manual).
+2. 从数据库中选择需要同步的表。
 
-After the data is synchronized from the data source, you can schedule other processing tasks against the data. For more information, see [Data IDE](../data_ide/dataide_overview).
+3. （可选）可提供SQL查询脚本筛选需同步的数据。
+
+   .. note:: 脚本中不需要输入`where`。例如:`age_4 >=40`
+
+4. （可选）单击 **数据预览** 预览将被同步的数据，如下图所示：
+
+   .. image:: media/sql_source.png
+
+5. 点击 **下一步**。
+
+
+### FTP、SFTP或S3文本数据库<textdatabase>
+
+
+1. 从已有的数据源列表中选择数据源或创建新数据源。更多信息，请参阅[数据源概述](../data_source/datasource_overview)。
+
+2. 指定数据源的URL。当目录包含多个文件时，数据记录将被合并。在这种情况下，确保同一目录中的所有数据具有相同的列。
+
+3. 选择文本数据文件中使用的列分隔符，例如，Tab符、逗号、分号、空格或其他分隔符。
+
+4. 选择数据文件的编码格式：UTF-8、GBK或GB2312。
+
+5. 选择数据文件的压缩格式。
+
+6. 选择加载数据时忽略首部的行数。
+
+7. 指定列头的名称。
+
+   .. image:: media/s3_source.png
+
+8. （可选）点击 **数据预览** 预览将同步的数据。
+
+9. 点击 **下一步**。
+
+
+## 步骤3：选择目标源<selecttarget>
+
+本版本只支持Hive类型的目标源，需提供以下设置。
+
+1. 选择目标源的类型。
+
+2. 如果Hive表已分区，则会自动加载分区。
+
+3. 指定目标分区。可通过以下方法指定分区：
+
+   - 列名：系统将根据该列的每个值创建新分区。例如：例名为日期，列值为`20180501`和`20180502`，则系统会创建两个分区，一天一个分区。
+   - 固定值：例如，输入2017-10-11，数据将自动同步到目标表的`2017-10-11`分区。
+   - 占位符：你可以使用系统提供的或自定义的参数。例如，系统变量`$ {cal_dt}`。有关系统变量的更多信息，参考[系统变量列表](../data_ide/system_variables)。
+
+   .. image:: media/sql_target.png
+
+4. 设定数据写入的规则，覆盖目标表中已有数据或将数据添加到已有数据后。
+
+5. 点击 **下一步**。
+
+## 步骤4：配置数据源与目标的映射关系<maprelationship>
+
+本步骤中，将源中的字段映射到目标字段中。
+
+1. 对于 **目标字段** 列中的每个字段，点击左侧框内的 **来源字段**，添加至到右侧框种的 **来源（配置映射关系）**。
+
+   .. image:: media/sql_mapping.png
+
+2. 完成配置后，点击 **下一步**。
+
+## 步骤5：配置调度<configschedule>
+
+1. 点击配置面板右侧边缘的 **调度配置**。
+
+2. 提供以下配置：
+
+   - **负责人**：负责人可以是本组织中具有访问数据集权利的用户。默认为任务创建者。负责人具有以下事实：
+     - 作为创建者，无法删除自己。
+     - 可以在同一组织中添加其他负责人。
+     - 同一负责人可不再创建具有相同名称的另一个任务。
+   - **说明**：（可选）提供说明。
+   - **预警方式**：选择告警的方式。邮件为强制选择项。
+     - 电子邮件：当实例满足告警条件时，会向负责人发送告警电子邮件。
+     - 短信：必须是在用户注册期间通过短信认证的电话号码。当实例满足告警条件时，短信仅发送给负责人。
+
+
+## 步骤6：配置参数<configparameter>
+
+为配置数据源和目标中使用的参数指定参数值。你可以为参数指定常量，系统变量或自定义变量。步骤如下：
+
+1. 点击配置面板右侧边缘的 **参数配置**。
+
+2. 在 **参数** 中，为每个使用到的参数指定参数值。
+
+3. 例如，将URL设置为S3数据源时：`s3://history/log_solar_dt_change_inverter/${test_list}.each_value`。
+
+   `test_list`为参数，你可以为该参数设置值：`test_list=Array[20170515,20170516,20170517,20170518,20170519,20170520]`。
+
+   EnOS将同步设置中指定的目录中的所有数据。
+
+   你可以将参数值设定为系统变量。更多信息，参考[系统变量列表](../data_ide/system_variables)。
+
+
+## 步骤7：配置并发数<configconcurrency>
+
+选择要建立的并发连接数，然后点击 **下一步** 。
+
+如设置高并发数，数据库会承受更大的负载，当总传输速率固定时，单个连接的速率会变小。
+
+
+## 步骤8：预览并保存配置<preview>
+
+预览设置，如有需要进行再编辑，然后点击 **保存** 完成配置。
+
+
+## 后续操作<followup>
+
+单击 **预跑** 测试任务。
+
+示例将在运行集成任务后产生。接着，你可在数据运维中跟踪有关实例的详细信息。更多信息，参考[数据运维](../task_monitor/index)。
+
+从数据源同步数据后，你可以根据数据设置其他处理任务。更多信息，参考[数据开发套件](../data_ide/dataide_overview)。

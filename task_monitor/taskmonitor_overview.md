@@ -1,17 +1,18 @@
-# Workflow monitor overview
+# 任务流运维概述
 
-After a workflow is published, the workflow is automatically run according to the scheduling parameters or manually when you perform the pre-running action, you can then view the running status and perform monitoring actions through the workflow monitor.
-
-## Key concepts
-
-**Instance**
-
-Once a workflow is triggered automatically according to scheduling parameter or manually by you, an instance will be generated . An instance represents a snapshot of a workflow being executed at some time. An instance contains task runtime, run status, and run log and other information.
+发布任务流后，任务流可根据配置的参数自动运行，任务流也可通过手动触发预跑运行。运行后，可在任务运维中查看状态并进行相应操作。
 
 
-## Major functions
+## 关键概念<keyconcepts>
 
-The workflow monitor allows you to do the following things:
-- View details about your workflows and perform the workflow monitoring actions such as pre-running, starting, pausing the workflows.
-- View details about instances for each workflow and perform the instance monitoring actions such as re-running and stopping.
-- View logs of all instances and troubleshooting information.
+**实例**
+
+当任务流根据调度参数自动触发后或手动触发后，将生成实例。实例为特定时间红正在执行的任务流的快照。实例包含任务运行时间、运行状态、运行日志和其他信息。
+
+
+## 主要功能<keyfunctionalities>
+
+数据运维功能中你可执行以下操作：
+ - 查看任务流的详细信息并对任务流进行相应的操作。例如，预跑、启动、暂停任务流。
+ - 查看单个任务流实例的详细信息并对任务进行相应操作，例如，重跑和终止运行。
+ - 查看所有实例的日志并进行故障排除。

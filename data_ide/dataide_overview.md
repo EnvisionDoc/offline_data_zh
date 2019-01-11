@@ -1,68 +1,78 @@
-# Data IDE overview
+# 数据开发套件概述
 
-Data developers can use Data IDE to process data through scheduling workflows.
-
-## Key concepts
-
-The following key concepts are involved in the data development process.
-
-**Workflow**  
-
-A workflow is an automatic data processing flow that comprises  _tasks_, _references_, and _relations_. A workflow is a directed acyclic graph (DAG), ring is not accepted in a workflow.
-A workflow can be scheduled to run for one time only or periodically.
-
-**Task**  
-
-A task is the fundamental element of the workflow. A task defines how to process the data. By running a task, the  _resource_ associated with the task is run. Data IDE function provides two types of tasks:
-- Data integration task: a data integration task will synchronize external data source into EnOS hive library. For more information, see [Data integration](../data_integration/index).
-- SHELL task: a task that runs a SHELL script.
-
-**Reference**  
-
-A reference is a task or workflow that plays as the prerequisite of its succeeding tasks. A reference must be the root node of a workflow. A workflow can have more than one references. Regardless of the scheduling settings of a task, the task is not run until its reference is run.
-
-**Relation**  
-
-An upstream task connects to a downstream task through relation. The relation is uni-directional.
-
-**Resource**  
-
-A resource is the script that is run by a SHELL-type of task. The supported resource formats are: `sh`, `jar`, `sql`, `hql`, `xml`, `zip`, `tar`, and `tar.gz`.
-
-## Stages of data development
-
-The data development process falls into the following stages.
-
-- Configuration time  
-
-  At the design time, you create a workflow that comprises tasks to run, and pre-run the workflow to verify whether the workflow works as designed.
-
-- Run time  
-
-  At the run time, workflow runs according to the scheduling parameters.
-
-- Monitor time  
-
-  At the monitor time, you can re-run a single task node or re-run a node and its subsequent nodes to pinpoint issues with the workflow.
-
-The following figure shows an example workflow with reference. In this example, the following facts are true:
-1. Task 1 and Task 2 are not run untill the reference is run.
-2. If the workflow is periodic, all tasks are run at each cycle as defined by the scheduling parameters.
-3. `True` and `False` applies only at the monitor time when you re-run a task.
-   - When `True`, the subsequent task is run.
-   - When `Faulse`, the subsequent task is not run.
-
-   ![Workflow concepts](media/workflow_reference.jpg)
+数据开发者可使用数据开发套件通过安排任务流处理数据。
 
 
-## Major functionalities
+## 主要概念<concepts>
 
-The Data IDE toolkit provides the following major functionalities:
+数据开发过程涉及以下主要概念：
 
-**Workflow development**  
+**任务流**
 
-According to your business requirements, your can design a workflow that comprises multiple tasks, and each task performs certain actions on your data.
+任务流是一种自动数据处理流，包括_任务_，_引用_和_关系_。任务流为有向无环图（DAG），任务流不可为环形任务流。你可以设置一次性或周期性运行的任务流。
 
-**Resource management**  
+**任务**
 
-You can register your scripts as resources and manage the version of the resources. The resources can then be referenced by tasks in a workflow.
+任务是任务流的基本要素。任务定义了如何处理数据。运行任务即运行了与任务关联的_资源_。大数据开发套件提供了两种任务类型：
+
+- 数据集成任务：数据集成任务将外部数据源中的数据同步到EnOS Hive中。更多信息，参考[数据集成](../data_integration/index).
+
+- SHELL任务：运行SHELL脚本的任务。
+
+
+**引用**
+
+引用是一种作为其后续任务的先决条件的任务或任务流。引用必须是任务流的根节点。一个任务流可以有多个引用。无论任务调度如何设置，任务不会在其引用运行之前运行。
+
+**关系**
+
+上游任务通过关系连接到下游任务，关系是单向的。
+
+**资源**
+
+资源是由SHELL类型的任务运行的脚本。支持的资源格式为：`sh`，`jar`，`sql`，`hql`，`xml`，`zip`，`tar`，和`tar.gz`。
+
+
+## 数据开发阶段<stages>
+
+数据开发包含以下几个方面。
+
+
+- 配置
+
+  在配置阶段，需创建一个包含运行任务的任务流，并通过预跑来验证任务流是否按设计运行。
+
+- 运行
+
+  在运行阶段，任务流会根据调度参数运行。
+
+- 运维
+
+  在运维阶段，你可以重新运行单个任务节点，或重新运行一个节点和它的后续节点以查明任务流中存在的问题。
+
+
+下图显示了引用的任务流。在此示例中包含以下事实：
+
+1. 在引用执行之前，任务1和任务2不会运行。
+
+2. 如果为周期性任务流，则所有任务都在调度参数定义的周期运行。
+
+3. `True`和`False`只会在运维阶段重新运行一个任务时有效。
+
+   - `True`表示后续任务在运行。
+   - `Faulse`表示后续任务未运行。
+
+   .. image:: media/workflow_reference.png
+
+
+## 主要功能<functionalities>
+
+数据开发套件工具包提供以下主要功能：
+
+**任务流开发**  
+
+根据你的业务需求，可设计包含多个任务的工作流，每个任务都会对你的数据执行相关操作。
+
+**资源管理**  
+
+你可以将脚本注册为资源并管理资源的版本。然后，资源可以被任务流中的任务引用。

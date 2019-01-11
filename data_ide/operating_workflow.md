@@ -1,40 +1,51 @@
-# Operating a workflow
+# 操作任务流
 
-## Pre-running a workflow
+## 预跑任务流<prerun>
 
-After creating a workflow, you can run the **Pre-run** action to check the operations and results of the code.
+工作流创建完成后，你可以通过预跑来检查代码的操作和结果。
 
-- In a periodic workflow, pre-run is designed to test code logic.
-- In a one-time workflow, each operation needs to be manually triggered, that is, to be realized by pre-run.
+ - 对于周期性任务流，预跑可测试代码逻辑。
+ - 对于一次性任务流，每个操作都需要手动触发，即通过预跑触发一次性任务流。
+
+1. 在EnOS控制台中选择 **数据开发套件 > 任务开发**。
+
+2. 在目录树中，双击需要更新的任务。
+
+3. 点击左上角的 **预跑** 并指定触发任务流的时间。
+
+   .. note:: - 若触发时间为当前时间之前，任务流将被立即触发并运行（可在数据运维中查看）。该触发时间将作为业务时间用于计算。
+           - 任务流同一时间只允许一个实例运行，若预跑实例与正在运行实例冲突，则依次执行。
+
+4. 单击 **确定**，任务流实例ID将显示在页面的右上角。
+
+5. 接着，你可以在数据运维中查看实例的详细信息。更多信息，参考[数据运维概述](../task_monitor/taskmonitor_overview)。
+
+## 克隆任务流<clone>
+
+克隆操作将克隆任务流的资源和上游引用。而下游引用不会被克隆。
+
+1. 在EnOS控制台中选择 **数据开发套件 > 任务开发**。
+
+2. 在目录树中，右击任务流并选择 **克隆**。
 
 
-1. Click **Pre-run** and specify the workflow triggering time.
+## 删除任务流<delete>
 
-   **Note:**
-   - If a time before the current system time is selected as the trigger time, the workflow will be executed immediately to generate a running instance (viewable through the workflow monitor. When the workflow instance is running, the trigger time is regarded as the business time and is transmitted to the time parameter for business computing.
-   - Only one instance for the same workflow is allowed to run at a time. If the pre-run instance conflicts with the current running instance, the pre-run instance will wait till the completion of the running instance.
+删除操作将删除任务流中所有的实例。你无法再通过数据运维查看实例的详细情况。
 
-2. Click **OK**, and the workflow instance ID will be displayed in the upper right corner of the page.
+1. 在EnOS控制台中选择 **数据开发套件 > 任务开发**。
 
-3. You can then view the instance information in the workflow monitor. For more information, see [Task monitor overview](../task_monitor/taskmonitor_overview).
-
-## Cloning a workflow
-
-From the directory tree, right-click the workflow and click **Clone**.
-
-**Note**: When you clone a workflow, the resources and the upstream references of the original workflow are cloned. However, the downstream references are not cloned.
+2. 在目录树中，右击任务流并选择 **删除**。
 
 
-## Deleting a workflow
+## 导出任务流<export>
 
-From the directory tree, right-click the workflow and click **Delete**.
+你可以导出任务流配置至本地，以供复用。
 
-**Note**: When you delete a workflow, the instances of the workflow are all removed. You can no longer retrieve the instance details through **Workflow Monitor**.
+1. 在EnOS控制台中选择 **数据开发套件 > 任务开发**。
 
-## Exporting a workflow
+2. 在目录树中，双击需要导出的任务流。
 
-To save a workflow configuration for future reuse, export the workflow.
+3. 在配置面板中，选择左上方的 **导出配置**。
 
-From the directory tree, double-click the workflow and click **Export** in the workflow panel.
-
-A file with the `.workflow` extension is downloaded to your local file system. An exported configuration file contains the configuration information, scheduling information, and resource packages that are used in the workflow.
+4. 扩展名为`.workflow`的配置文件将被下载到本地。导出的配置文件中包括任务流中使用的配置信息，计划信息和资源包。

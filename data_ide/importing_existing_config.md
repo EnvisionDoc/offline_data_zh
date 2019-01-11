@@ -1,26 +1,31 @@
-# Creating by importing an existing configuration
+# 基于已有任务流创建新任务流
 
-If you have existing workflow configuration that you want to reuse for the new workflow, import the configuration file.
+本文描述了如果基于已有任务流创建新的任务流。
 
-## Before you begin
+## 开始前准备<beforestart>
 
-You must have a workflow configuration file stored locally. For information about how to export an existing workflow as a configuration file, see [Exporting a workflow](operating_workflow#exporting-a-workflow).
+复用的任务流配置文件必须已保存至本地。有关如何将已有任务流配置文件导出，参考[导出任务流](operating_workflow#export)。
 
-## Procedure
 
-1. Click **+** from above the directory tree.
-2. In the **New Workflow** window, provide the following settings and click **OK**.
-   - Mode: select **Import from existing**.   
-   - Name: Enter the name of workflow.
-   - Upload File: In your local file system, browse to and select the configuration file.
-   - Description: Provide a descriptive information about the workflow.
-   - Select Directory: Select the directy to save the workflow.
+## 步骤<procedure>
 
-3. Click **OK**.
-4. Edit the settings that are loaded from the configuration file.
-  - If the imported configure file defines a periodic workflow, see [Creating a periodic workflow from scratch](creating_workflow_periodic).
-  - If the imported configure file defines a one-time workflow, see [Creating a manual workflow from scratch](creating_workflow_onetime).
+1. 在EnOS控制台中选择 **数据开发套件 > 任务开发**，单击目录树上方的 **+**。
 
-## What to do next
+2. 在 **新建任务流** 窗口中，提供以下设置，然后单击 **确认**。
 
-Pre-run the workflow to test the result of your configuration.
+    - 模式：导入任务配置。
+    - 名称：输入工作流程的名称。
+    - 上传文件：上传本地的任务配置文件。
+    - 描述：提供有关任务流的描述性信息。
+    - 选择目录：选择存储任务流的目录。
+
+3. 点击 **确定**。
+
+4. 编辑从配置文件加载的设置。
+
+   - 如果导入的为周期性任务流配置文件，参考[从零开始创建周期性任务流](creating_workflow_periodic)。
+   - 如果导入的为一次性任务流配置文件，参考[从零开始创建一次性任务流](creating_workflow_onetime)。
+
+## 后续操作<followup>
+
+单击 **预跑** 测试任务流。

@@ -1,29 +1,33 @@
-# Scenarios
+# 使用场景
 
-The typical user scenarios of using Data IDE for data development are as follows:
+使用数据开发套件进行数据开发的典型用户场景如下：
 
-## Running a built-in script
+## 运行内置脚本<builtinscript>
 
-EnOS provides built-in scripts for the most frequently used data processing activities, such as synchronizing the master data from HDFS to an external S3 database, or converting columns to rows. For a complete list of built-in scripts that EnOS provides, see [Common library](common_library).
+EnOS提供了常用一系列数据处理的内置脚本。例如将主数据从HDFS同步到外部S3数据库，或将列转换为行。有关EnOS提供的内置脚本的相关信息，参考[通用库](common_library)。
 
-The major procedure of running a built-script is as follows:
+运行内置脚本的主要步骤如下：
 
-1. Browse the Common Library tree and locate the script that you want to run.
-2. Double-click the version of the script and review the details about the script.
-  ![Built-in script](media/scenario_built-in.png)
+1. 在EnOS控制面板中选择 **数据开发套件 > 任务开发**。
 
-3. Click **Use the Program**.
+2. 在通用库中找到要运行的脚本。
 
-4. In the pop-out window, provide settings about the workflow.
-  ![Workflow with built-in script](media/built-in_workflow.png)
+3. 双击脚本的版本查看有关脚本的详细信息。
 
-5. Provide the scheduling settings. For more information, see [Creating a one-time workflow](creating_workflow_onetime) or [Creating a periodic workflow](creating_workflow_periodic).
+   .. image:: media/scenario_built-in.png
 
+4. 单击右侧的 **使用该方案**。
 
-## Running an external script
+5. 在弹出窗口中，完成有关任务流的设置。并点击 **确认**。
 
-The major procedure of running an external script is as follows:
-1. Upload your script as a resource on EnOS. For more information, see [Creating a resource](creating_resource).
-2. Create a workflow with a SHELL-type of task that references the resource. For more information, see [Creating a one-time workflow](creating_workflow_onetime) or [Creating a periodic workflow](creating_workflow_periodic) according to your needs.
+6. 在配置面板中，完成调度配置。更多信息，参考[从零开始创建一次性任务流](creating_workflow_onetime)或[从零开始创建周期性任务流](creating_workflow_periodic)。
 
-EnOS provides sample code to help you streamline this procedure, for more information, see [https://github.com/EnvisionBigdata/dataide_external_script](https://github.com/EnvisionBigdata/dataide_external_script).
+## 运行外部脚本<externalscript>
+
+运行外部脚本的主要步骤如下：
+
+1. 将你的脚本作为资源上传至EnOS。更多信息，参考[创建资源](creating_resource)。
+
+2. 创建由SHELL类型的任务组成的任务流，该任务需调用步骤1中创建的包含外部脚本的资源。更多信息，参考[从零开始创建一次性任务流](creating_workflow_onetime)或[从零开始创建周期性任务流](creating_workflow_periodic)。
+
+EnOS提供了示例代码用以简化配置过程，详细信息，参考[https://github.com/EnvisionBigdata/dataide_external_script](https://github.com/EnvisionBigdata/dataide_external_script).

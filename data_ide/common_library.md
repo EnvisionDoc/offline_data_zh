@@ -1,65 +1,48 @@
-# Common library
+# 通用库
 
-EnOS provides various built-in SDKs in its common library to help you access and process data more conveniently. These SDKs lower the development thresholds and improve development efficiency.
+EnO在其通用库中提供各种内置SDK，可帮助你更便捷地访问和处理数据。这些SDK降低了开发成本并提高了开发效率。
 
-## What's provided in the library
+## 内置SDK列表<sdk>
 
-<body>
-<table border="1" cellspacing="0" cellpadding="0">
-  <tr>
-    <td valign="top"><p align="center"><strong>SDK name</strong></p ></td>
-    <td valign="top"><p align="center"><strong>Description</strong></p ></td>
-  </tr>
-  <tr>
-    <td valign="top"><p>SYNC_HDFS_TO_S3</p ></td>
-    <td valign="top"><p>Synchronize data from a specified path in HDFS to a specified   path in an S3 database.</p ></td>
-  </tr>
-  <tr>
-    <td valign="top"><p>COLUMNS_TO_ROWS</p ></td>
-    <td valign="top"><p>Converts row data of your HIVE table, where each row contains   values of all data collecting points of a device at a time, into a table   where each row contains historical values of a single data collecting point.</p ></td>
-  </tr>
-  <tr>
-    <td valign="top"><p>SYNC_MDM</p ></td>
-    <td valign="top"><p>Synchronizes master data to HDFS.</p ></td>
-  </tr>
-  <tr>
-    <td valign="top"><p>SYNC_REPORT_DB</p ></td>
-    <td valign="top"><p>Performs one-time synchronization of full-load of data from   Hive table to your target table.</p ></td>
-  </tr>
-  <tr>
-    <td valign="top"><p>FLATTEN_POINTS</p ></td>
-    <td valign="top"><p>Converts EnOS raw point data (each row contains historical   values of a single data collecting point) to sql-like row data (each row   contains values of all data collecting points of a device at a time).</p ></td>
-  </tr>
-  <tr>
-    <td valign="top"><p>POWER_DATA_INTERPOLATION</p ></td>
-    <td valign="top"><p>Interpolates power data, especially for the missing data of   production.</p ></td>
-  </tr>
-  <tr>
-    <td valign="top"><p>SYNC_REPORT_STRUCTURE</p ></td>
-    <td valign="top"><p>Transfers table structure from Hive database, to MySQL report   database.</p ></td>
-  </tr>
-  <tr>
-    <td valign="top"><p>SHORT_TERM_LOAD_FORECAST</p ></td>
-    <td valign="top"><p>For different power consumers in the grid, provides 0-6 days   load forecast for different-level of time granularity (15 min, 30 min, 1   hour, 1 day) based on historical data and optionally weather data.</p ></td>
-  </tr>
-  <tr>
-    <td valign="top"><p>HADOOP_FILE_CRUSHER</p ></td>
-    <td valign="top"><p>Combines many small files into fewer larger files.</p ></td>
-  </tr>
-</table>
-</body>
+.. list-table::
+   :widths: auto
 
-## How to use the SDK
+   * - SDK名称
+     - 描述
+   * - SYNC_HDFS_TO_S3
+     - 将HDFS中指定路径的数据同步到S3数据库中的指定路径。
+   * - COLUMNS_TO_ROWS
+     - 将HIVE表的行数据（一行为设备一次收集的所有数据采集点的值）转换为表，表中的每行为单个数据采集点的历史值。
+   * - SYNC_MDM
+     - 将主数据同步到HDFS。
+   * - SYNC_REPORT_DB
+     - 将Hive表中的完整数据一次性同步到目标表中。
+   * - FLATTEN_POINTS
+     - 将EnOS原始点数据（一行为单个数据收集点的历史值）转换为类似sql的行数据（一行为设备的所有数据采集点的值）。
+   * - POWER_DATA_INTERPOLATION
+     - 插入功率数据，尤其是丢失的生产数据。
+   * - SYNC_REPORT_STRUCTURE
+     - 将Hive数据库的表结构传输到MySQL报告数据库。
+   * - SHORT_TERM_LOAD_FORECAST
+     - 对于网格中的不同电力消费者，基于历史数据和可选的天气数据，针对不同级别的时间粒度（15分钟，30分钟，1小时，1天）提供0-6天负荷预测。
+   * - HADOOP_FILE_CRUSHER
+     - 将多个小文件合并为几个较大的文件。
 
-The major procedure of using the built-in SDK is as follows:
 
-1. In **Data IDE** > **Task Designer**, browse the Common Library tree and locate the SDK that you want to use.
-2. Double-click the version of the script and review the details about the script.
-  ![Built-in script](media/scenario_built-in.png)
+## 步骤<procedure>
 
-3. Click **Use the SDK**.
+使用内置SDK的主要步骤如下：
 
-4. In the pop-out window, provide settings about the workflow.
-  ![Workflow with built-in script](media/built-in_workflow.png)
+1. 在EnOS控制台中选则 **数据开发套件 > 任务开发** ，在通用库中找到你需要的SDK。
 
-5. Provide the scheduling settings. For more information, see [Creating a one-time workflow](creating_workflow_onetime) or [Creating a periodic workflow](creating_workflow_periodic).
+2. 双击脚本的版本号查看脚本的详细情况。
+
+   ..image:: media/scenario_built-in.png
+
+3. 点击右栏中的 **使用该方案**。
+
+4. 在弹出窗口中，提供任务流的配置信息。
+
+   .. image:: media/built-in_workflow.png
+
+5. 提供调度配置信息。具体的配置流程，参考[从零开始创建一次性任务流](creating_workflow_onetime)或[从零开始创建周期性任务流](creating_workflow_periodic)。

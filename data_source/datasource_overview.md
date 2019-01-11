@@ -1,17 +1,17 @@
-# Data source overview
+# 数据源概述
 
-EnOS allows you to retrieve data from third party data sources for data processing and analysis.
+EnOS允许你对第三方数据源进行检索以及进行数据处理和分析。
 
-## Supported data sources
+## 支持的数据源<datasource>
 
-EnOS supports the following types of data sources:
+EnOS支持以下类型的数据源：
 
-- Text storage
+- 文本储存
   - FTP
   - SFTP
   - S3
 
-- Database
+- 数据库
   - MYSQL
   - SQL Server
   - ORACLE

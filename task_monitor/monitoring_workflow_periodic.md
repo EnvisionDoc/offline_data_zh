@@ -1,46 +1,53 @@
-# Monitoring periodic workflow instances
+# 监控周期任务流
 
-For a period worflow, you can perform the following monitoring actions:
-- Viewing the workflow instance
-- Pre-running the workflow
-- Pre-running a selected task in the workflow
-- Pre-running a selected task and the subsequent tasks of the task
-- Pausing a running workflow
-- Resuming a paused workflow
+你可以对周期任务流执行以下操作：
+ - 查看周期任务流
+ - 预跑周期任务流
+ - 预跑单个任务
+ - 启动/暂停任务流
 
-## Viewing a periodic workflow
+## 查看周期任务流<viewworkflow>
 
-You can view general information about a workflow and the detailed information about each task that is run in the workflow.
+你可以查看任务流的常规信息和任务流中每个任务的详细信息。
 
-To view a periodic workflow, do the following steps:
-1. From the navigation panel, click **Task Monitor** > **Periodic Scheduling**. A table of all workflows that you have access to is shown in the right panel.
-2. (Optional) In the search field above the table, enter the task ID or name to filter to result shown in the table.
-3. Click the name of the workflow that you want to inspect details for from the table. A workflow panel is shown.
-4. For each task node in the workflow, you can double-click the task node to view the following details:
-  - Attributes: settings of the task that is defined at the design time
+执行以下步骤查看周期任务流：
 
-    ![Task attributes in the workflow monitor](media/workflow_attributes.jpg)
+1. 在EnOS控制面板中，单击 **数据运维 > 周期任务**。右侧面板中显示了你可以访问的所有周期任务流。
 
-  - Task contents: what's run in the task. What's shown in the Task Contents tab varies according to the task type. The content of a data integration task might look something like this:
+2. （可选）在表格上方的搜索字段中，输入任务ID或名称过滤表格中显示的结果。
 
-    ![Task contents in the workflow monitor](media/workflow_taskcontents.jpg)
+3. 单击需查看详细信息的任务流的名称，将打开任务流面板。
 
-    While an SHELL task content would be something like this:
+4. 在任务流面板中，双击单个任务节点可查看以下详细信息：
 
-    ![Task contents in the workflow monitor](media/workflow_taskcontents2.jpg)
+   - **属性**：任务的配置详情。
 
-## Pre-running a workflow
+     .. image:: media/workflow_attributes.png
 
-To manually trigger a workflow, click **Pre-run** from the **Operations** column of the workflow and set the triggering time.
+   - **节点内容**：任务中运行的内容。具体内容因任务类型而异。
 
-## Pre-running a task
+     示例1，数据集成任务的内容如下所示：
 
-To manually trigger a task within a workflow:
-1. Click the name of the workflow from the table.
-2. In the workflow panel, right-click the task and click **Pre-run** and set the triggering time.
+     .. image:: media/workflow_taskcontents.png
 
-## Starting and pausing a workflow
+     示例2，SHELL任务的内容如下所示：
 
-You can stop a workflow that is already started. In this case, the workflow will no longer run to generate an instance. To stop a workflow, click **Stop** from the **Operations** column of the workflow.
+     .. image:: media/workflow_taskcontents2.png
 
-Conversely, a paused workflow can be resumed. In this case, it will automatically run in accordance with scheduled configuration. To resume a workflow, click **Start** from the **Operations** column of the workflow.
+## 预跑周期任务流<prerunworkflow>
+
+如需手动触发任务流，点击需预跑的任务流后的 **重跑** 并设置触发时间。
+
+## 预跑单个任务<preruntask>
+
+如需手动触发任务流中的单个任务：
+
+1. 单击需预跑的任务所属的任务流的名称，打开任务流面板。
+
+2. 在任务面板中，右键单击任务框，然后单击 **预跑** 并设置触发时间。
+
+## 启动/暂停任务流<startworkflow>
+
+你可以暂停在运行中的任务流。暂停后，工作流将不再运行并生成实例。点击任务流后的 **暂停** 可暂停任务流。
+
+相反，你也可以恢复暂停中的任务流。启动后，任务流将根据计划的配置自动运行。点击需任务流后的 **启动** 可启动任务流。

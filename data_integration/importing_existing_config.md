@@ -1,31 +1,36 @@
-# Creating by importing an existing configuration
+# 基于已有任务创建新的集成任务
 
-If you have existing workflow configuration that you want to reuse for the new data integration workflow, import the configuration file.
+  本文描述了如果基于已有任务创建新的集成任务。
 
-## Before you begin
+## 开始前准备<beforestart>
 
-You must have a workflow configuration file stored locally. For information about how to export an existing workflow as a configuration file, see [Exporting a workflow](../data_ide/operating_workflow#exporting-a-workflow).
+复用的任务流配置文件必须已保存至本地。有关如何将已有任务流配置文件导出，参考[导出任务流](../data_ide/operating_workflow#exporting-a-workflow).
 
-## Procedure
+## 步骤<procedure>
 
-1. Click **Data Integration** from the left navigation tree and click **New Data Integration Workflow**.
-2. In the **New Data Integration Workflow** window, provide the following settings.
-   - Mode: select **Import from existing**.
-   - Upload File: In your local file system, browse to and select the configuration file.
-   - Name: Enter the name of workflow.
-   - Type: Select whether to create a periodic workflow that is run automatically based on scheduling parameters, or a one-time workflow that is run only when manually triggered.
-   - Description: Provide descriptive information about the workflow.
-   - Select Directory: Select the directy to save the workflow.
+1. 在EnOS控制面板中选择 **数据集成**。
 
-3. Click **OK**.
-4. Edit the settings that are loaded from the configuration file.
-  - If you selected to create a periodic workflow in step 2, see [Creating a periodic synchronization workflow from scratch](creating_scratch_periodic).
-  - If you selected to create a one-time workflow in step 2, see [Creating a one-time synchronization workflow from scratch](creating_scratch_onetime).
+2. 点击目录树上方的 **+**，新建数据集成任务。
 
-## What to do next
+3. 在 **新建数据集成任务** 窗口中，提供有关任务的基本设置。
 
-Click **Pre-run** to trigger the workflow.
+   - 模式：选择 **导入任务配置**。
+   - 名称：输入集成任务的名称。
+   - 上传文件：从本地选择复用的任务配置文件。
+   - 说明：提供有关集成任务的描述性信息。
+   - 选择目录：选择保存集成任务的目录。
 
-After a workflow is run, an instance is generated. You can then trace the details about the instance through the task monitor. For more information, see [Task monitor](../task_monitor/index).
+4. 点击 **确定**。
 
-After the data is synchronized from the data source, you can schedule other processing tasks against the data. For more information, see [Data IDE](../data_ide/dataide_overview).
+5. 根据需求修改上传的任务配置文件。
+
+  - 对于周期调度任务，参考[创建从外部数据库同步数据到Hive库的周期调度的任务](creating_scratch_periodic)。
+  - 对于手动调度任务，参考[创建从外部数据库同步数据到Hive库的手动调度的任务](creating_scratch_onetime)。
+
+## 后续操作<followup>
+
+单击 **预跑** 测试任务。
+
+示例将在运行任务后产生。接着，你可在数据运维中跟踪有关实例的详细信息。更多信息，参考[数据运维](../task_monitor/index)。
+
+从数据源同步数据后，你可以根据数据设置其他处理任务。更多信息，参考[数据开发套件](../data_ide/dataide_overview)。

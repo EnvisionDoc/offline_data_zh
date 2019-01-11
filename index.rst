@@ -1,29 +1,35 @@
 ***********************
-EnOS 批处理
+EnOS™批处理
 ***********************
 
 .. toctree::
    :maxdepth: 1
-   :caption: Back to
+   :hidden:
+   :caption: 返回
 
-   EnOS fundamental <https://docs.envisioniot.com/docs/enos/en/latest/overview/enos_introduction.html>
-
-.. toctree::
-    :maxdepth: 1
-    :caption: Batch processing
-
-    gettingstarted
-    data_source/index
-    data_integration/index
-    data_ide/index
-    task_monitor/index
-    metadata_management/index
+   EnOS™ 智能物联网操作系统 <https://docs.envisioniot.com/docs/enos/zh_CN/latest/overview/enos_introduction.html>
 
 .. toctree::
-    :maxdepth: 1
-    :caption: Related services
+   :maxdepth: 1
+   :caption: 入门指引
 
-    Data analysis and report <https://docs.envisioniot.com/docs/analysis-report/en/latest/>
+   gettingstarted
+
+.. toctree::
+   :maxdepth: 1
+   :caption: 操作
+
+   data_source/index
+   data_integration/index
+   data_ide/index
+   task_monitor/index
+   metadata_management/index
+
+.. toctree::
+   :maxdepth: 1
+   :caption: 参考信息
+
+   分析与报表 <https://docs.envisioniot.com/docs/analysis-report/zh_CN/latest/report_overview.html>
 
 Downloads
 """"""""
