@@ -17,6 +17,13 @@ EnOS™批处理
 
 .. toctree::
    :maxdepth: 1
+   :caption: Tutorial
+
+   tutorial/index
+
+
+.. toctree::
+   :maxdepth: 1
    :caption: 操作
 
    data_source/index
