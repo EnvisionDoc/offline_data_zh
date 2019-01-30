@@ -5,7 +5,7 @@
 
 ## 开始前准备<beforestart>
 
-你必须已创建用于存放同步数据的目标Hive表。更多信息，参考[创建Hive表](https://docs.envisioniot.com/docs/data-explorer/zh_CN/latest/creating_hivetable.html)。
+你必须已创建用于存放同步数据的目标Hive表。更多信息，参考[创建Hive表](https://www.envisioniot.com/docs/data-explorer/zh_CN/latest/creating_hivetable.html)。
 
 
 ## 步骤1：创建数据集成任务<createworkflow>

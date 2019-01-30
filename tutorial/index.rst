@@ -3,90 +3,80 @@ Tutorial
 
 This is an entry-level experiment, which minimizes unnecessary coding and can be finished with basic knowledge on Java and SQL languages.
 
-Audience
--------------------
+Data processing learning overview
+----------------------------------
 
-Data Scientists
+As the functions for data processing to be introduced in the following
+experiments are closely connected with one another, we designed a complete workflow, which will help you better understand the
+relevant concepts and tasks of offline data processing.
 
-Application Developers
+This overview section aims to help you:
 
-Duration
--------------------
+- Understand the overall process of data processing;
+- Gain a clear overall goal for the subsequent learning modules;
+- Help you disassemble the overall goal into several easy-to-achieve subtasks;
 
-2 hours
+Summary of data processing
+`````````````````````````````
+
+The following learning modules deals with handling the offline data stored on the platform. The common process is as follows:
+
+1. Perform a preliminary analysis on the data stored on the platform (e.g., the device data connected into EnOS through edge) through **Data Explorer** to understand what data you have in hand, in what forms they are stored, and their characteristics, etc.
+
+2. Determine how to design your data warehouse based on your business needs (how many layers are needed between the raw data and the final business indicator data, and what data required foreach layer, etc.);
+
+3. Create the hive tables through the **Data Explorer** service.
+
+4. Develop batch processing workflows through the **Data IDE** service and configure the dependencies among the tasks and their respective  scheduling cycles.
+
+5. Based on your business needs, prepare the reports for your business indicators through the built-in **BI & Report** service and synchronize the data into your business relational database for further processing and presentation.
 
 Objectives
--------------------
+```````````````
 
-- Learn the forms of simple applications based on the EnOS platform;
+In the following learning modules, you'll design batch processing workflows against the historical data of your devices, and render the statistical report for the data. The data flow is as shown in the following figure:
 
-- Master the ways of developing applications based on the EnOS platform;
+.. image:: media/data_data_flow.png
+   :alt: Fig. Data Flows
+   :width: 800px
 
-- Master the ways of configuring and querying the alerts based on the EnOS
-    platform;
 
-- Master the ways of acquiring data from the platform through EnOS APIs;
+In this experiment:
 
-- Master the ways of data exploring based on the EnOS platform;
+1. Three electrical meters are simulated with the EnOS device simulators, and data is continuously sent to the platform.
 
-- Master the ways of development and scheduling configuration of offline
-    tasks;
+2. The simulated data generated in 1 is saved into the HDFS as a file through the real-time stream.
 
-- Master the usage of the BI reports;
+3. EnOS supports the management of the data in the HDFS through Hive, and the original data is saved in the pointrecords table in Hive. You are required to build a data warehouse in Hive.
 
-Prerequisites
--------------------
+4. You'll create a periodic batch data processing workflow, generate the business data required by the report from the original pointrecords table.
 
-- A personal computer.
+5. You'll configure a task to regularly synchronize the business data from Hive to the relational databases corresponding to the reports.
 
-Lab preview
--------------------
+6. You'll create a view from the relational database and generate a business report.
 
-In this experiment, the data of 3 electrical meters are
-pre-recorded for 24 hours. The pre-recorded data is played back through the device simulators
-on the EnOS platform to simulate the access of the device data.
+Let's suppose that the business goal of the experiment is to show the following statistical indicators of the three electric meters:
 
-You are required to build a simple application based on these device data, which
-supports the following functions:
+- The statistics of the total active electricity consumption of the three meters on the hours of the day;
+- The statistics of the maximum total active power of each of the three meters during each hour of the day;
+- The percentage of active power electricity consumption for each of the three meters;
 
-- Inquiry of alerts of devices;
+.. image:: media/data_Electricity_consumption_distributed_by_time.png
+   :alt: Fig. Electricity consumption distributed by time
 
-- Acquisition and display of device properties, real-time and historical data;
+.. image:: media/data_Maximum_active_power_distributed_by_time.png
+   :alt: Fig. Maximum active power distributed by time
 
-- Visualization of business performance indicators.
+.. image:: media/data_Electricity_consumption_percentage_for_each_meter.png
+   :alt: Fig. Electricity consumption percentage for each meter
 
-To reduce the non-core coding work, you are only required to print your results
-on the EnOS console for the display of alerts and device data inquiries, as
-shown in the following figure:
+Design of batch processing workflow
+```````````````````````````````````````
 
-.. image:: media/overview_Acquiring_and_displaying_device_data.png
-   :alt: Fig. Acquiring and displaying device data through EnOS APIs by calling the EnOS API testing function*
+To achieve the planned business goals, the data processing workflow will comprise tasks as shown in the following figure:
 
-.. image:: media/overview_Acquiring_device_data_and_printing_API.png
-   :alt: Fig. Acquiring device data and printing it onto the console by running Java codes that call the EnOS API
-
-.. image:: media/overview_Visualizing_business_statistical_indicators.png
-   :alt: Fig. Visualizing business statistical indicators by using the EnOS BI & Reports tool
-
-Based on the objectives of building the above-mentioned simple applications, the
-whole experiment consists of the following steps:
-
-1. Logging in to the EnOS Portal and browsing through the funtion menus in the
-    Portal;
-
-2. Creating your own applications in the EnOS Portal;
-
-3. Configuring the alerts in the EnOS Portal;
-
-4. Querying the device data using the API testing function in the EnOS Portal;
-
-5. Writing your own Java programs and acquiring the device properties, real-time and historical data with it by calling the EnOS API (Optional, as Java code writing is required);
-
-6. Using the **Data Explorer** function in the EnOS Portal to perform the preliminary analysis on the historical data of the device ( HiveQL language is required);
-
-7. Creating batch tasks using the **Data IDE** function in the EnOS Portal, processing the historical device data regularly (Optional, as writing shell, HiveQL and MySQL scripts is required);
-
-8. Displaying business statistical indicators by using the **BI & Reports** function in the EnOS Portal.
+.. image:: media/data_data_pro_subtask.png
+   :alt: Fig. Tasks in the data processing workflow
 
 
 Learning modules
@@ -95,6 +85,5 @@ Learning modules
 .. toctree::
    :maxdepth: 2
 
-   data_instructions_on_experiment_overview
    module_1
    module_2

@@ -18,7 +18,7 @@ Briefly mention what the user's learning goal is and include the following SEO k
 
 2. 准备目标源
 
-   在EnOS上创建用于存储从数据源同步来的数据的配置单元表（Hive）。更多信息，参考[创建Hive表](https://docs.envisioniot.com/docs/data-explorer/zh_CN/latest/creating_hivetable.html)。
+   在EnOS上创建用于存储从数据源同步来的数据的配置单元表（Hive）。更多信息，参考[创建Hive表](https://www.envisioniot.com/docs/data-explorer/zh_CN/latest/creating_hivetable.html)。
 
 ## 步骤2: 从数据源同步数据至EnOS<synchronizetoenos>
 
@@ -35,4 +35,4 @@ Briefly mention what the user's learning goal is and include the following SEO k
 
 ## 步骤4：（可选）探索数据<explorerdata>
 
-   EnOS数据探索帮助你执行交互式数据分析和可视化，并将这些数据用于数据可视化和商业智能等目的。更多信息，参考[数据探索](https://docs.envisioniot.com/docs/data-explorer/zh_CN/latest/dataexplorer_overview.html)。
+   EnOS数据探索帮助你执行交互式数据分析和可视化，并将这些数据用于数据可视化和商业智能等目的。更多信息，参考[数据探索](https://www.envisioniot.com/docs/data-explorer/zh_CN/latest/dataexplorer_overview.html)。
