@@ -45,4 +45,4 @@ EnO在其通用库中提供各种内置SDK，可帮助你更便捷地访问和�
 
    .. image:: media/built-in_workflow.png
 
-5. 提供调度配置信息。具体的配置流程，参考[从零开始创建一次性任务流](creating_workflow_onetime)或[从零开始创建周期性任务流](creating_workflow_periodic)。
+5. 提供调度配置信息。具体的配置流程，参考[从零开始创建一次性任务流](data_ide/creating_workflow_onetime)或[从零开始创建周期性任务流](data_ide/creating_workflow_periodic)。

@@ -38,7 +38,7 @@ In the following learning modules, you'll design batch processing workflows agai
 
 .. image:: media/data_data_flow.png
    :alt: Fig. Data Flows
-   :width: 800px
+   
 
 
 In this experiment:

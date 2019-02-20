@@ -7,7 +7,7 @@ Briefly mention what the user's learning goal is and include the following SEO k
 使用EnOS分析历史数据的典型流程如下：
 
 .. image:: media/getting_started.png
-   :width: 700px
+   
 
 ## 步骤1：准备数据源和目标数据库<preparedatasource>
 

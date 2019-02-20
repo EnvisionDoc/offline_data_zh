@@ -11,7 +11,7 @@
   :maxdepth: 1
   :caption: 概述
 
-  dataintegration_overview
+  di_overview
   scenarios
 
 .. toctree::

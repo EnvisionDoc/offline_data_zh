@@ -13,7 +13,7 @@ EnOS™离线分析
    :caption:  概念
 
    data_source/datasource_overview
-   data_integration/dataintegration_overview
+   data_integration/di_overview
    data_ide/dataide_overview
    task_monitor/taskmonitor_overview
 

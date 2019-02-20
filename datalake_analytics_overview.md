@@ -23,7 +23,7 @@ EnOS离线分析服务以下角色：
 
 **数据集成**
 
-整合数据，帮助你同步各种异质数据源产生的数据。例如，同步源数据库的结构化数据至EnOS Cloud Hive数据库，同步EnOS Cloud数据至外部数据库。[了解更多 >>](data_integration/dataintegration_overview)
+帮助你同步各种异质数据源产生的数据。例如，同步源数据库的结构化数据至EnOS Cloud Hive数据库，同步EnOS Cloud数据至外部数据库。[了解更多 >>](data_integration/di_overview)
 
 **ETL（提取-转换-加载）**
 
