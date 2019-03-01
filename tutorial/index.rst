@@ -29,7 +29,7 @@ The following learning modules deals with handling the offline data stored on th
 
 4. Develop batch processing workflows through the **Data IDE** service and configure the dependencies among the tasks and their respective  scheduling cycles.
 
-5. Based on your business needs, prepare the reports for your business indicators through the built-in **BI & Report** service and synchronize the data into your business relational database for further processing and presentation.
+5. Based on your business needs, prepare the reports for your business indicators through the built-in **数据报表** service and synchronize the data into your business relational database for further processing and presentation.
 
 Objectives
 ```````````````
