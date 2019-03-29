@@ -15,6 +15,7 @@
    data_integration/di_overview
    data_ide/dataide_overview
    task_monitor/taskmonitor_overview
+   data_explorer/dataexplorer_overview
 
 
 .. toctree::
@@ -37,6 +38,7 @@
    data_integration/index
    data_ide/index
    task_monitor/index
+   data_explorer/index
    metadata_management/index
 
 .. toctree::
@@ -45,10 +47,3 @@
 
    common_library
    system_variables
-
-Downloads
-""""""""
-    pdf_ htmlzip_ epub_
-.. _pdf: https://www.envisioniot.com/projects/offline-data/downloads/pdf/latest/
-.. _htmlzip: https://www.envisioniot.com/projects/offline-data/downloads/htmlzip/latest/
-.. _epub: https://www.envisioniot.com/projects/offline-data/downloads/epub/latest/
