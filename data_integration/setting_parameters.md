@@ -6,7 +6,7 @@
 
 参数可设置为常量，系统变量或自定义变量。
 
-有关可以使用的系统变量，参阅[系统变量](../data_ide/system_variables)。
+有关可以使用的系统变量，参阅[系统变量](../system_variables)。
 
 
 ## 步骤<procedure>

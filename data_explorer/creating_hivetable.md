@@ -33,7 +33,7 @@
    ) comment 'wind domain dimension table'
    ```
 
-   更多有关命令的信息，参考[Apache Hive documentation on table creation]（https://cwiki.apache.org/confluence/display/Hive/LanguageManual+DDL#LanguageManualDDL-CreateTable）
+   更多有关命令的信息，参考[Apache Hive documentation on table creation](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+DDL#LanguageManualDDL-CreateTable)
 
 
 5. 点击 |run| 运行段落。下图显示了表已创建成功：
@@ -54,7 +54,7 @@ select * from dw_meter_1h_demo limit 2
 
 ## 后续操作<followup>
 
-如果要将刚创建的Hive表作为存储外部数据源的数据库，需要将Hive表指定为目标表，并通过数据集成功能将数据源中的列映射到目标。详细信息，参考 **批处理** 中的[数据集成]（https://docs.eniot.com/docs/offline-data/zh_CN/latest/data_integration/index.html）。
+如果要将刚创建的Hive表作为存储外部数据源的数据库，需要将Hive表指定为目标表，并通过数据集成功能将数据源中的列映射到目标。详细信息，参考 **批处理** 中的[数据集成](/docs/offline-data/zh_CN/dev/data_integration/index.html)。
 
 .. |enter_note| image:: media/enter_note.png
 

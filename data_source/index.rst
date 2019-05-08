@@ -1,4 +1,4 @@
-外部源连接
+﻿外部源连接
 ============
 
 .. toctree::
@@ -16,3 +16,4 @@
    connecting_oracle
    connecting_s3
    connecting_sftp
+   connecting_blob

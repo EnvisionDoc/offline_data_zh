@@ -5,7 +5,7 @@
 
 ## 开始前准备<beforestart>
 
-你必须已创建用于存放同步数据的目标Hive表。更多信息，参考 **数据分析及报表** 中的[创建Hive表](https://www.envisioniot.com/docs/analysis-report/zh_CN/latest/data_explorer/creating_hivetable.html)。
+你必须已创建用于存放同步数据的目标Hive表。更多信息，参考 **数据分析及报表** 中的[创建Hive表](/docs/offline-data/zh_CN/latest/data_explorer/creating_hivetable.html)。
 
 
 ## 步骤1：创建数据集成任务<createworkflow>
@@ -76,7 +76,7 @@
 
    - 列名：系统将根据该列的每个值创建新分区。例如：例名为日期，列值为`20180501`和`20180502`，则系统会创建两个分区，一天一个分区。
    - 固定值：例如，输入2017-10-11，数据将自动同步到目标表的`2017-10-11`分区。
-   - 占位符：你可以使用系统提供或自定义的参数。例如，系统变量`$ {cal_dt}`。有关系统变量用法的更多信息，参考[系统变量列表](../data_ide/system_variables)。
+   - 占位符：你可以使用系统提供或自定义的参数。例如，系统变量`$ {cal_dt}`。有关系统变量用法的更多信息，参考[系统变量列表](../system_variables)。
 
    .. image:: media/sql_target.png
 
@@ -135,7 +135,7 @@
 
    EnOS将同步设置中指定的目录中的所有数据。
 
-   你可以将参数值设定为系统变量。更多信息，参考[系统变量列表](../data_ide/system_variables)。
+   你可以将参数值设定为系统变量。更多信息，参考[系统变量列表](../system_variables)。
 
 
 ## 步骤7：配置并发数<configconcurrency>

@@ -4,7 +4,7 @@
 
 ## 运行内置脚本<builtinscript>
 
-EnOS提供了常用一系列数据处理的内置脚本。例如将主数据从HDFS同步到外部S3数据库，或将列转换为行。有关EnOS提供的内置脚本的相关信息，参考[通用库](common_library)。
+EnOS提供了常用一系列数据处理的内置脚本。例如将主数据从HDFS同步到外部S3数据库，或将列转换为行。有关EnOS提供的内置脚本的相关信息，参考[通用库](/docs/offline-data/zh_CN/latest/common_library.html)。
 
 运行内置脚本的主要步骤如下：
 
@@ -14,7 +14,7 @@ EnOS提供了常用一系列数据处理的内置脚本。例如将主数据从H
 
 3. 双击脚本的版本查看有关脚本的详细信息。
 
-   .. image:: media/scenario_built-in.png
+   .. image:: ../media/scenario_built-in.png
 
 4. 单击右侧的 **使用该方案**。
 
