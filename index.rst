@@ -1,4 +1,4 @@
-数据分析
+﻿数据分析
 ==========
 
 .. toctree::
@@ -28,7 +28,8 @@
    :maxdepth: 1
    :caption: 教程
 
-   tutorial/index
+   tutorial/integrating_external_data_sources/index
+   tutorial/visualizing_external_data_sources/index
 
 .. toctree::
    :maxdepth: 1

@@ -3,7 +3,7 @@ Tutorial
 
 This is an entry-level experiment, which minimizes unnecessary coding and can be finished with basic knowledge on Java and SQL languages.
 
-Data processing learning overview
+Data Processing Learning Overview
 ----------------------------------
 
 As the functions for data processing to be introduced in the following
@@ -16,7 +16,7 @@ This overview section aims to help you:
 - Gain a clear overall goal for the subsequent learning modules;
 - Help you disassemble the overall goal into several easy-to-achieve subtasks;
 
-Summary of data processing
+Summary of Data Processing
 `````````````````````````````
 
 The following learning modules deals with handling the offline data stored on the platform. The common process is as follows:
@@ -29,7 +29,7 @@ The following learning modules deals with handling the offline data stored on th
 
 4. Develop batch processing workflows through the **Data IDE** service and configure the dependencies among the tasks and their respective  scheduling cycles.
 
-5. Based on your business needs, prepare the reports for your business indicators through the built-in **数据报表** service and synchronize the data into your business relational database for further processing and presentation.
+5. Based on your business needs, prepare the reports for your business indicators through the built-in **Data Report** service and synchronize the data into your business relational database for further processing and presentation.
 
 Objectives
 ```````````````
@@ -38,7 +38,6 @@ In the following learning modules, you'll design batch processing workflows agai
 
 .. image:: media/data_data_flow.png
    :alt: Fig. Data Flows
-   
 
 
 In this experiment:
@@ -70,7 +69,7 @@ Let's suppose that the business goal of the experiment is to show the following 
 .. image:: media/data_Electricity_consumption_percentage_for_each_meter.png
    :alt: Fig. Electricity consumption percentage for each meter
 
-Design of batch processing workflow
+Design of Batch Processing Workflow
 ```````````````````````````````````````
 
 To achieve the planned business goals, the data processing workflow will comprise tasks as shown in the following figure:
@@ -79,7 +78,7 @@ To achieve the planned business goals, the data processing workflow will compris
    :alt: Fig. Tasks in the data processing workflow
 
 
-Learning modules
+Learning Modules
 -------------------
 
 .. toctree::
