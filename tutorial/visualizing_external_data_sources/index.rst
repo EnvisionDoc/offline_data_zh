@@ -1,5 +1,6 @@
-Processing and Visualizing External Data Sources
+处理集成的数据并生成报表
 ====================================
+注：本教程中文版正在翻译中。谢谢你的访问！
 
 .. toctree::
    :maxdepth: 1
