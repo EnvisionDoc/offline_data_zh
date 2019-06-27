@@ -1,6 +1,5 @@
-﻿集成外部数据源
+﻿Integrating External Data Sources
 ====================================
-注：本教程中文版正在翻译中。谢谢你的访问！
 
 .. toctree::
    :maxdepth: 1
