@@ -26,13 +26,6 @@
 
 .. toctree::
    :maxdepth: 1
-   :caption: 教程
-
-   tutorial/integrating_external_data_sources/index
-   tutorial/visualizing_external_data_sources/index
-
-.. toctree::
-   :maxdepth: 1
    :caption: 操作
 
    data_source/index
