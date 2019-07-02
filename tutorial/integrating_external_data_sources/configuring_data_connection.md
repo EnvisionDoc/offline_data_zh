@@ -10,14 +10,14 @@ In this unit, configure the connection to the MySQL server that hosts the employ
 
 3. In the **Data Sources** window, provide the following information:
 
-   - **Data source**: Enter a name for the data source.
-   - **Data source type**: Select **MYSQL** from the drop-down list.
-   - **Host Name or IP Address**: Enter the host name or IP address of the MySQL server.
-   - **Database Name**: Enter the name that uniquely identifies to the database to be connected.
-   - **Port**: Enter the port of the MySQL server.
-   - **Username**: Enter the user name for accessing the database.
-   - **Password**: Enter the password of the user name.
-   - **Data Source Description**: Enter a short description of the data connection.
+   - **Data Source**: Name of the data source.
+   - **Data Source Type**: Select **MYSQL** from the drop-down list.
+   - **Host Name or IP Address**: Host name or IP address of the MySQL server.
+   - **Database Name**: Enter a unique name for the database to be connected.
+   - **Port**: Port of the MySQL server.
+   - **Username**: User name for accessing the database.
+   - **Password**: Password of the user name.
+   - **Data Source Description**: Short description of the data connection.
 
 4. Click **OK** to save the configuration. See the following data connection sample:
 

@@ -11,10 +11,10 @@ The scenario is depicted in the following chart:
 This tutorial walks you through a typical path of integrating external data sources into EnOS, which is:
 
 - Configuring data connection for the external data source
-- Creating a target Hive table to receive the synchronized data
-- Creating a data integration task with periodic scheduling
+- Creating a target Hive table to receive data to be synchronized from the external database
+- Creating and configuring a data integration task with periodic scheduling to synchronize data periodically
 - Running the data integration task
-- Viewing the synchronized data in the hive table
+- Viewing the synchronized data in the Hive table
 
 ### [Start >](configuring_data_connection)
 
@@ -34,7 +34,7 @@ This tutorial includes the following units:
 >
 > 20 minutes
 
-> [Unit 3. Creating a Data Integration Task](creating_data_integration_task)
+> [Unit 3. Configuring a Data Integration Task](creating_data_integration_task)
 >
 > 20 minutes
 
