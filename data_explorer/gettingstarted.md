@@ -25,22 +25,22 @@
 .. list-table::
    :widths: auto
 
-   * - 解释器
+   * - 解释器</th>
      - `%<interpreter_name>`
-   * - hive
-     - %hive
-   * - spark
-     - %livy.spark
-   * - pyspark
-     - %livy.pyspark
-   * - markdown
-     - %md
-   * - mysql
-     - %mysql_report
-   * - python
-     - %python
-   * - shell
-     - %sh
+   * - hive</td>
+     - %hive</td>
+   * - spark</td>
+     - %livy.spark</td>
+   * - pyspark</td>
+     - %livy.pyspark</td>
+   * - markdown</td>
+     - %md</td>
+   * - mysql</td>
+     - %mysql_report</td>
+   * - python</td>
+     - %python</td>
+   * - shell</td>
+     - %sh</td>
 
 .. image:: media/gettingstarted_2.gif
 
