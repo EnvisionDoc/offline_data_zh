@@ -120,7 +120,7 @@ html_theme = 'sphinx_enos_theme'
 #
 html_theme_options = {
     'copyright_zh': '© 2019 Envision Digital. All Rights Reserved.',
-
+    'docs_url_zh': '/zh_CN/documentation/',
 }
 
 # Add any paths that contain custom static files (such as style sheets) here,
@@ -132,7 +132,7 @@ html_static_path = ['_static']
 # to template names.
 #
 # This is required for the alabaster theme
-# refs: http://alabaster.readthedocs.io/en/latest/installation.html#sidebars
+# refs: http://alabaster.readthedocs.io/en/2.0.9/installation.html#sidebars
 html_sidebars = {
     '**': [
         'relations.html',  # needs 'show_related': True theme option to display

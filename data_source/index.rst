@@ -2,14 +2,14 @@
 ============
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Learn
+   :maxdepth: 1
+   :caption: 概念
 
    datasource_overview
 
 .. toctree::
    :maxdepth: 1
-   :caption: How-to's
+   :caption: 操作
 
    connecting_ftp
    connecting_mysql
@@ -17,3 +17,4 @@
    connecting_s3
    connecting_sftp
    connecting_blob
+   connecting_gitlab
