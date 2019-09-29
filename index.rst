@@ -7,16 +7,6 @@
 
    datalake_analytics_overview
 
-.. toctree::
-   :maxdepth: 1
-   :caption:  概念
-
-   data_source/datasource_overview
-   data_integration/di_overview
-   data_ide/dataide_overview
-   task_monitor/taskmonitor_overview
-   data_explorer/dataexplorer_overview
-
 
 .. toctree::
    :maxdepth: 1
@@ -24,12 +14,6 @@
 
    gettingstarted
 
-.. toctree::
-   :maxdepth: 1
-   :caption: 教程
-
-   tutorial/integrating_external_data_sources/index
-   tutorial/visualizing_external_data_sources/index
 
 .. toctree::
    :maxdepth: 1
@@ -41,6 +25,16 @@
    task_monitor/index
    data_explorer/index
    metadata_management/querying_metadata
+   data_report/index
+
+
+.. toctree::
+   :maxdepth: 1
+   :caption: 教程
+
+   tutorial/integrating_external_data_sources/index
+   tutorial/visualizing_external_data_sources/index
+
 
 .. toctree::
    :maxdepth: 1

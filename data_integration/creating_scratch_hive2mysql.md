@@ -22,7 +22,7 @@
 
 3. 在 **新建数据集成任务** 窗口中，完成数据集成任务的基本设置。
 
-   - 方式：选择 **新建** 以从头开始创建集成任务流。如果选择 **导入任务配置**，参考[基于已有任务流创建新任务流](/docs/offline-data/zh_CN/latest/data_integration/importing_existing_config.html)。
+   - 方式：选择 **新建** 以从头开始创建集成任务流。如果选择 **导入任务配置**，参考[基于已有任务流创建新任务流](/docs/offline-data/zh_CN/2.0.9/data_integration/importing_existing_config.html)。
    - 名称：输入集成任务的名称。
    - 同步类型：选择 **数据同步**。
    - 调度类型：选择 **手动调度**。

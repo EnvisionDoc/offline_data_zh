@@ -28,7 +28,9 @@
    - **存储账号秘钥**：输入用于对发送到BLOB数据库的请求进行签名的访问秘钥。
    - **数据源描述**：输入对数据源的描述。
 
-4. 点击 **确定** 保存配置。
+4. 点击 **测试** 按钮，测试数据源的连通性。
+
+5. 点击 **确定** 保存配置。
 
 ## 结果<result>
 
@@ -37,7 +39,7 @@
 
 ## 后续操作<followup>
 
-成功建立连接后，EnOS会将数据从外部数据源提取到EnOS内部的Hive数据库。你必须创建Hive表存储已提取到的数据。更多信息，参考[创建Hive表](/docs/offline-data/zh_CN/latest/data_explorer/creating_hivetable.html)。
+成功建立连接后，EnOS会将数据从外部数据源提取到EnOS内部的Hive数据库。你必须创建Hive表存储已提取到的数据。更多信息，参考[创建Hive表](/docs/offline-data/zh_CN/2.0.9/data_explorer/creating_hivetable.html)。
 
 <!--
 

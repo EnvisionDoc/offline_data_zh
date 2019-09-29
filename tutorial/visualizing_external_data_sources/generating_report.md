@@ -24,9 +24,9 @@ With the dataset created and edited, you can now generate a data report. EnOS Da
 
 ## What to Do Next
 
-You can choose other charts and controls to generate more data reports to meet your business requirements. For more information, see [Creating Reports](/docs/analysis-report/en/latest/creating_report.html).
+You can choose other charts and controls to generate more data reports to meet your business requirements. For more information, see [Creating Reports](/docs/analysis-report/en/2.0.9/creating_report.html).
 
-When report editing is completed, you can publish the report so that it is visible to other users in the organization. For more information, see [Managing Reports](/docs/analysis-report/en/latest/managing_report.html).
+When report editing is completed, you can publish the report so that it is visible to other users in the organization. For more information, see [Managing Reports](/docs/analysis-report/en/2.0.9/managing_report.html).
 
 .. |crosstable_icon| image:: media/crosstable_icon.png
 

@@ -1,32 +1,16 @@
-数据开发套件
+﻿数据开发套件
 -------------------------------
 
-
-
 .. toctree::
    :maxdepth: 1
-   :caption: Learn
+   :caption: 概念
 
    dataide_overview
-   scenarios
 
 .. toctree::
    :maxdepth: 1
-   :caption: How-To's
+   :caption: 操作
 
-   creating_resource
-   managing_resource
-   creating_workflow_onetime
-   creating_workflow_periodic
-   importing_existing_config
-   operating_workflow
-   operating_task
-   setting_parameters
-   running_external_script
+   job_resource
+   data_dev
 
-.. toctree::
-   :maxdepth: 1
-   :caption: Reference
-
-   common_library
-   system_variables

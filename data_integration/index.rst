@@ -3,7 +3,7 @@
 
 .. toctree::
    :maxdepth: 1
-   :caption: 概述
+   :caption: 概念
 
    di_overview
 
@@ -22,4 +22,4 @@
    :maxdepth: 1
    :caption: 参考信息
 
-   ../data_ide/system_variables
+   ../system_variables
