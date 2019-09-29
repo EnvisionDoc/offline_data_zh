@@ -25,7 +25,7 @@ Complete the following settings for the Hive data source:
 
 1. From the **Data Source Type** drop-down list, select **HIVE**.
 
-2. From the **Source Table** drop-down list, select the **employee** Hive table that has been created in [Tutorial - Integrating External Data Sources](/docs/offline-data/en/2.0.9/tutorial/integrating_external_data_sources/creating_hive_table.html), which also has the employee data synchronized from external data source.
+2. From the **Source Table** drop-down list, select the **employee** Hive table that has been created in [Tutorial - Integrating External Data Sources](/docs/offline-data/en/latest/tutorial/integrating_external_data_sources/creating_hive_table.html), which also has the employee data synchronized from external data source.
 
    .. image:: media/selecting_source.png
 
@@ -87,7 +87,7 @@ In this tutorial, select 1 connection.
 
 3. Specify a triggering time and click **OK** to test running the data integration task.
 
-4. A workflow instance will be created for the data integration task. Check the running status and result of the task on the **Workflow Operation** page. For more information on monitoring a data integration task, see [Running the Data Integration Task](/docs/offline-data/en/2.0.9/tutorial/integrating_external_data_sources/running_data_integration_task.html).
+4. A workflow instance will be created for the data integration task. Check the running status and result of the task on the **Workflow Operation** page. For more information on monitoring a data integration task, see [Running the Data Integration Task](/docs/offline-data/en/latest/tutorial/integrating_external_data_sources/running_data_integration_task.html).
 
 ## Step 8: View the synchronized data
 

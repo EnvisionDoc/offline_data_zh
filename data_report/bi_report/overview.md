@@ -17,7 +17,7 @@ The built-in 数据报表 function of EnOS™ brings the following benefits:
 
 The basic objects in a reporting platform include data sources, datasets and reports, as described below:
 
-- **Data source**: Before making a report, you need to prepare the data or specify the data source where raw data is located. 数据报表 automatically associates corresponding data sources according to your permissions in the EnOS™ System. Currently, the supported data source is MySQL. For more information about data source, see [Data source management](/docs/offline-data/en/2.0.9/data_source/datasource_overview.html).
+- **Data source**: Before making a report, you need to prepare the data or specify the data source where raw data is located. 数据报表 automatically associates corresponding data sources according to your permissions in the EnOS™ System. Currently, the supported data source is MySQL. For more information about data source, see [Data source management](/docs/offline-data/en/latest/data_source/datasource_overview.html).
 
 - **Dataset**: Once a data source is connected, simple logical processing based on one or more data source tables can be performed to get a logic table that has a connection to the source tables. The logical table is a dataset. The dataset can be referenced directly in the report design. So that you can focus on the design instead of caring about the underlying logical processing of the source tables.
 

@@ -37,7 +37,7 @@ EnOS数据分析服务主要服务于以下角色：
 
 **数据资产管理**
 
-EnOS数据资产管理产品提供实时数据流处理、数据订阅、自定义数据存储策略等服务。[了解更多 >>](/docs/data-asset/zh_CN/2.0.9/data_asset_overview)
+EnOS数据资产管理产品提供实时数据流处理、数据订阅、自定义数据存储策略等服务。[了解更多 >>](/docs/data-asset/zh_CN/latest/data_asset_overview)
 
 ## 后续操作
 学习如何使用EnOS数据分析服务进行大数据批处理。

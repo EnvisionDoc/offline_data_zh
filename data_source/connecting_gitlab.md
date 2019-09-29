@@ -43,7 +43,7 @@
 
 ## 后续操作<followup>
 
-成功建立连接后，即可将数据从外部数据源提取到EnOS内部的Hive数据库。你必须创建Hive表存储已提取到的数据。更多信息，参考[创建Hive表](/docs/offline-data/zh_CN/2.0.9/data_explorer/creating_hivetable.html)。
+成功建立连接后，即可将数据从外部数据源提取到EnOS内部的Hive数据库。你必须创建Hive表存储已提取到的数据。更多信息，参考[创建Hive表](/docs/offline-data/zh_CN/latest/data_explorer/creating_hivetable.html)。
 
 <!--
 
