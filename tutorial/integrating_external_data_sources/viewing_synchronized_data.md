@@ -19,7 +19,7 @@ When the data synchronization task runs successfully, view the synchronized data
 
 ## What to Do Next
 
-The synchronized data can be further processed by data analytics tools for analysis and visualization. For more information, see [Data IDE](/docs/offline-data/en/latest/data_ide/index.html) and [Data Report](/docs/analysis-report/en/latest/report_overview.html).
+The synchronized data can be further processed by data analytics tools for analysis and visualization. For more information, see [Data IDE](/docs/offline-data/en/2.0.8/data_ide/index.html) and [Data Report](/docs/analysis-report/en/2.0.8/report_overview.html).
 
 .. |Enter_note| image:: media/enter_note.png
 

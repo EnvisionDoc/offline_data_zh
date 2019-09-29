@@ -7,7 +7,7 @@
 
 参数可设置为常量，系统变量或自定义变量。
 
-有关可以使用的系统变量，参阅[系统变量](/docs/offline-data/zh_CN/latest/system_variables.html)。
+有关可以使用的系统变量，参阅[系统变量](/docs/offline-data/zh_CN/2.0.8/system_variables.html)。
 
 
 ## 步骤<procedure>

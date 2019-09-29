@@ -1,6 +1,6 @@
 # Unit 3. Creating Datasets
 
-After the employee data is synchronized to the Report Database table, you can then create datasets with the synchronized data. For more information about dataset, see [Creating Datasets](/docs/analysis-report/en/latest/creating_dataset.html).
+After the employee data is synchronized to the Report Database table, you can then create datasets with the synchronized data. For more information about dataset, see [Creating Datasets](/docs/analysis-report/en/2.0.8/creating_dataset.html).
 
 1. Log in the EnOS Console, select **Data Report > Data** from the left navigation panel.
 
@@ -20,7 +20,7 @@ After the employee data is synchronized to the Report Database table, you can th
 
 After the dataset is created, you can edit the dataset according to the requirement of creating reports, such as editing the dimensions and measures, synchronizing table structure, and previewing data.
 
-For detailed information, see [Managing Datasets](/docs/analysis-report/en/latest/managing_dataset.html).
+For detailed information, see [Managing Datasets](/docs/analysis-report/en/2.0.8/managing_dataset.html).
 
 ## Next Unit
 
